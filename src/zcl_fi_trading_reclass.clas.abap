@@ -95,7 +95,7 @@ CLASS zcl_fi_trading_reclass DEFINITION
     TYPES tt_status_trading_prcs_icon TYPE SORTED TABLE OF ty_status_trading_prcs_icon WITH UNIQUE KEY status.
     TYPES:
       BEGIN OF ts_document_settings,
-        purchase_accounting_document TYPE ztbfi_trdrecl_po,
+        purchase_accounting_document TYPE ZCDS_I_TradingReclassMdPo,
       END OF ts_document_settings.
     TYPES:
       BEGIN OF ts_search_documents_parameters,
@@ -1297,10 +1297,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     DATA(documents) = VALUE tt_trading_reclass_key( FOR row IN read_selected_rows( )
                                                     ( contents[ row ]-%key  ) ).
 
-    SELECT FROM ztbfi_trdrecllog
-      FIELDS *
-      FOR ALL ENTRIES IN @documents
-      WHERE DocumentUUID = @documents-DocumentUUID
+    SELECT
+      FROM @documents AS documents
+             INNER JOIN
+               ZCDS_I_TradingReclassLog AS TradingReclassLog ON TradingReclassLog~DocumentUUID = documents~DocumentUUID
+      FIELDS TradingReclassLog~*
       INTO TABLE @DATA(log_documents).
     IF sy-subrc IS NOT INITIAL.
       MESSAGE s485(vl) DISPLAY LIKE 'E'.
@@ -1319,8 +1320,8 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
 
     SORT log_documents BY documentuuid
-                          datetime_l
-                          zaehl.
+                          datetimel
+                          sequence.
     LOOP AT log_documents REFERENCE INTO DATA(log).
 
       AT NEW DocumentUUID.
@@ -1329,17 +1330,17 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
         log_appl->add_system_message( '1' ).
       ENDAT.
 
-      AT NEW datetime_l.
+      AT NEW datetimel.
         MESSAGE s001 INTO dummy_message
-                WITH read_catprcs_trading_text( log->type_process )
-                     timestampl_to_datetime( log->datetime_l ).
+                WITH read_catprcs_trading_text( log->typeprocess )
+                     timestampl_to_datetime( log->datetimel ).
 
         log_appl->add_system_message( '2' ).
       ENDAT.
 
-      AT NEW type_document.
+      AT NEW typedocument.
         MESSAGE s001 INTO dummy_message
-                WITH read_doccat_trading_text( log->type_document ).
+                WITH read_doccat_trading_text( log->typedocument ).
 
         log_appl->add_system_message( '3' ).
       ENDAT.
@@ -1371,10 +1372,10 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
   METHOD read_settings.
     CLEAR document_settings.
 
-    SELECT SINGLE FROM ztbfi_trdrecl_po
+    SELECT SINGLE FROM ZCDS_I_TradingReclassMdPo
       FIELDS *
       WHERE CompanyCode = @document-origincompanycode
-      INTO @document_settings-purchase_accounting_document.
+      INTO CORRESPONDING FIELDS OF @document_settings-purchase_accounting_document.
     IF sy-subrc IS NOT INITIAL.
       RAISE EXCEPTION TYPE zcx_trading
             MESSAGE e072 WITH document-CompanyCode.
@@ -1704,8 +1705,9 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                         position   = o_columns->get_column_position( 'SALESDOCUMENT' ) + 1 ).
         o_columns->set_column_position( columnname = 'QUANTITYINPURCHASEINVOICE'
                                         position   = o_columns->get_column_position( 'TRANSACTIONQUANTITYUNIT' ) + 1 ).
-        o_columns->set_column_position( columnname = 'PURCHASEINVOICEQUANTITYUNIT'
-                                        position   = o_columns->get_column_position( 'QUANTITYINPURCHASEINVOICE' ) + 1 ).
+        o_columns->set_column_position(
+            columnname = 'PURCHASEINVOICEQUANTITYUNIT'
+            position   = o_columns->get_column_position( 'QUANTITYINPURCHASEINVOICE' ) + 1 ).
 
         " Hidden columns (Technical)
         o_column ?= o_columns->get_column( 'MANDT' ).

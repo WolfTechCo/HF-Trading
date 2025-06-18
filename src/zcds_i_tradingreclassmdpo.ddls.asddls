@@ -10,9 +10,9 @@
 define view entity ZCDS_I_TradingReclassMdPo
   as select from ztbfi_trdrecl_po
 {
-  key companycode                                           as Companycode,
-      accountingdocumenttype                                as Accountingdocumenttype,
-      glaccount                                             as Glaccount,
-      cast( fromprofitcenter as fis_prctr preserving type ) as Fromprofitcenter,
-      cast( toprofitcenter as fis_prctr preserving type )   as Toprofitcenter
+  key companycode                                           as CompanyCode,
+      accountingdocumenttype                                as AccountingDocumentType,
+      glaccount                                             as GlAccount,
+      cast( fromprofitcenter as fis_prctr preserving type ) as FromProfitCenter,
+      cast( toprofitcenter as fis_prctr preserving type )   as ToProfitCenter
 }
