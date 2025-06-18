@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZDE_DOCUMENT_TYPE_TRADING</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>ZDD_DOCUMENT_TYPE_TRADING</DOMNAME>
+    <HEADLEN>24</HEADLEN>
+    <SCRLEN1>09</SCRLEN1>
+    <SCRLEN2>18</SCRLEN2>
+    <SCRLEN3>24</SCRLEN3>
+    <DDTEXT>Tipo documento procesado</DDTEXT>
+    <REPTEXT>Tipo documento procesado</REPTEXT>
+    <SCRTEXT_S>TpDocProc</SCRTEXT_S>
+    <SCRTEXT_M>Tipo doc.Procesado</SCRTEXT_M>
+    <SCRTEXT_L>Tipo documento procesado</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Processed type document</DDTEXT>
+     <REPTEXT>Processed type document</REPTEXT>
+     <SCRTEXT_S>ProcTpDoc</SCRTEXT_S>
+     <SCRTEXT_M>Proc.type document</SCRTEXT_M>
+     <SCRTEXT_L>Processed type document</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

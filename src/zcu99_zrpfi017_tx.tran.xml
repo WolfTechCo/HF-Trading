@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>ZCU99_ZRPFI017_TX</TCODE>
+    <CINFO>Ag==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>ZCU99_ZRPFI017_TX</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+    <S_PLATIN>X</S_PLATIN>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>S</SPRSL>
+    <TCODE>ZCU99_ZRPFI017_TX</TCODE>
+    <TTEXT>Conf. Trading Reclasificación</TTEXT>
+   </TSTCT>
+   <TSTCP>
+    <TCODE>ZCU99_ZRPFI017_TX</TCODE>
+    <PARAM>/*SM34 VCLDIR-VCLNAME=ZCU99_zrpfi017_CU;SHOW=X;</PARAM>
+   </TSTCP>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>E</SPRSL>
+     <TTEXT>Trading process configuration(EXT)</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>F</SPRSL>
+     <TTEXT>Trading process configuration(EXT)</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>P</SPRSL>
+     <TTEXT>Configuração do processo trad(EXT)</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

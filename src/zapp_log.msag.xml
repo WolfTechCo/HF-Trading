@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZAPP_LOG</ARBGB>
+    <MASTERLANG>S</MASTERLANG>
+    <STEXT>Message for ZCL_APPLICATION_LOG</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>El tipo de mensaje era &amp;1. Debería ser X, A, E, W, S o I.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>El ID del mensaje era inicial. Tipo de mensaje: &amp;1, número de mensaje: &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Log &amp;1 creado con éxito en Tx SLG1 Obj. &amp;2 Obj.Inf. &amp;3</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+    <LANGU>F</LANGU>
+    <LANGU>P</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <STEXT>Message for ZCL_APPLICATION_LOG</STEXT>
+    </T100T>
+    <T100T>
+     <SPRSL>F</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <STEXT>Message for ZCL_APPLICATION_LOG</STEXT>
+    </T100T>
+    <T100T>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZAPP_LOG</ARBGB>
+     <STEXT>Mensagem para ZCL_APPLICATION_LOG</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>The message type was &amp;1. Should be X, A, E, W, S or I.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>The message ID was initial. Message type: &amp;1, message number: &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Log &amp;1 successfully created in Tx SLG1 Obj. &amp;2 Inf.Obj. &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>The message type was &amp;1. Should be X, A, E, W, S or I.</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>The message ID was initial. Message type: &amp;1, message number: &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Log &amp;1 successfully created in Tx SLG1 Obj. &amp;2 Inf.Obj. &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>O tipo de mensagem foi &amp;1. Deve ser X, A, E, W, S ou I.</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>A identificação da mensagem foi inicial. Tipo de mgm: &amp;1, núm.da msg: &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Log &amp;1 criado com sucesso em Tx SLG1 Obj. &amp;2 Obj.Inf. &amp;3</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

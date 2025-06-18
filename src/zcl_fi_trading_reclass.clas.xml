@@ -1,0 +1,1850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_FI_TRADING_RECLASS</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Trading external growers</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <RSTAT>P</RSTAT>
+    <MSG_ID>ZMC_TRADING_SRV</MSG_ID>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>F01</KEY>
+     <ENTRY>PlantillaCargaReclasificación_</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F02</KEY>
+     <ENTRY>BrutoUnit</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F03</KEY>
+     <ENTRY>Peso Bruto Unit</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F04</KEY>
+     <ENTRY>Peso Bruto Unitario</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F05</KEY>
+     <ENTRY>NetoUnit</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F06</KEY>
+     <ENTRY>Peso Neto Unit</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>F07</KEY>
+     <ENTRY>Peso Neto Unitario</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H01</KEY>
+     <ENTRY>Sociedad Origen</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H02</KEY>
+     <ENTRY>Folio Origen</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H03</KEY>
+     <ENTRY>Fecha Liquidación</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H04</KEY>
+     <ENTRY>Contenedor</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H05</KEY>
+     <ENTRY>Cantidad</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H06</KEY>
+     <ENTRY>Cantidad Unidad</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H07</KEY>
+     <ENTRY>Valor Liquidación</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H08</KEY>
+     <ENTRY>Moneda</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>H09</KEY>
+     <ENTRY>Temporada</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>P01</KEY>
+     <ENTRY>Procesando documentos...&amp;1% (&amp;2/&amp;3)</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>P02</KEY>
+     <ENTRY>Cancelando/Anulando documentos...&amp;1% (&amp;2/&amp;3)</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q01</KEY>
+     <ENTRY>Visualizar documentos cargados</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q02</KEY>
+     <ENTRY>Documentos ingresados correctamente,¿Desea visualizar los documentos?</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q03</KEY>
+     <ENTRY>Sobreescribir variante</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q04</KEY>
+     <ENTRY>Variante ya existe, ¿Sobreescibir?</ENTRY>
+     <LENGTH>68</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q05</KEY>
+     <ENTRY>Reversar/Anular documentos</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q06</KEY>
+     <ENTRY>Se Anularan/Reinicializaran los documentos seleccionados. ¿Desea continuar?.</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q07</KEY>
+     <ENTRY>Anular documentos</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>Q08</KEY>
+     <ENTRY>Se Anularan los documentos seleccionados no procesados. ¿Desea continuar?.</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T01</KEY>
+     <ENTRY>Log´s</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T02</KEY>
+     <ENTRY>Procesar</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T03</KEY>
+     <ENTRY>Actualizar</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T04</KEY>
+     <ENTRY>Vis.Impresión</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T05</KEY>
+     <ENTRY>Reversar</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T06</KEY>
+     <ENTRY>Carga Documentos</ENTRY>
+     <LENGTH>64</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T07</KEY>
+     <ENTRY>Anular</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T08</KEY>
+     <ENTRY>Eliminar</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>F01</KEY>
+       <ENTRY>TemplateLoadTemplateProducersExt_</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F02</KEY>
+       <ENTRY>GrossUnit</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F03</KEY>
+       <ENTRY>GrossUnitWeight</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F04</KEY>
+       <ENTRY>Gross unit weight</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F05</KEY>
+       <ENTRY>NetUnit</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F06</KEY>
+       <ENTRY>NetUnitWeight</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F07</KEY>
+       <ENTRY>Net Unit Weight</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H01</KEY>
+       <ENTRY>Grower</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H02</KEY>
+       <ENTRY>Invoice</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H03</KEY>
+       <ENTRY>Item</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H04</KEY>
+       <ENTRY>InvoiceDate</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H05</KEY>
+       <ENTRY>Sold-To-Party</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H06</KEY>
+       <ENTRY>CompanyCode</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H07</KEY>
+       <ENTRY>Amount</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H08</KEY>
+       <ENTRY>Currency</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H09</KEY>
+       <ENTRY>Material</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P01</KEY>
+       <ENTRY>Processing documents...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P02</KEY>
+       <ENTRY>Canceling documents...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q01</KEY>
+       <ENTRY>Display loaded documents</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q02</KEY>
+       <ENTRY>Documents entered correctly, do you want to view the documents?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q03</KEY>
+       <ENTRY>Overwrite variant</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q04</KEY>
+       <ENTRY>Variant already exists, Overwrite?</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q05</KEY>
+       <ENTRY>Reverse/Cancel documents</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q06</KEY>
+       <ENTRY>The selected documents will be cancelled/restarted. Do you wish to continue?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T01</KEY>
+       <ENTRY>Log´s</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T02</KEY>
+       <ENTRY>Process</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T03</KEY>
+       <ENTRY>Update</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T04</KEY>
+       <ENTRY>Display printout</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T05</KEY>
+       <ENTRY>Cancel</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T06</KEY>
+       <ENTRY>Upload documents</ENTRY>
+       <LENGTH>64</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T07</KEY>
+       <ENTRY>Void</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T08</KEY>
+       <ENTRY>Details</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>F01</KEY>
+       <ENTRY>TemplateLoadTemplateProducersExt_</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F02</KEY>
+       <ENTRY>GrossUnit</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F03</KEY>
+       <ENTRY>GrossUnitWeight</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F04</KEY>
+       <ENTRY>Gross unit weight</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F05</KEY>
+       <ENTRY>NetUnit</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F06</KEY>
+       <ENTRY>NetUnitWeight</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F07</KEY>
+       <ENTRY>Net Unit Weight</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H01</KEY>
+       <ENTRY>Grower</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H02</KEY>
+       <ENTRY>Invoice</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H03</KEY>
+       <ENTRY>Item</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H04</KEY>
+       <ENTRY>InvoiceDate</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H05</KEY>
+       <ENTRY>Sold-To-Party</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H06</KEY>
+       <ENTRY>CompanyCode</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H07</KEY>
+       <ENTRY>Amount</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H08</KEY>
+       <ENTRY>Currency</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H09</KEY>
+       <ENTRY>Material</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P01</KEY>
+       <ENTRY>Processing documents...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P02</KEY>
+       <ENTRY>Canceling documents...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q01</KEY>
+       <ENTRY>Display loaded documents</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q02</KEY>
+       <ENTRY>Documents entered correctly, do you want to view the documents?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q03</KEY>
+       <ENTRY>Overwrite variant</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q04</KEY>
+       <ENTRY>Variant already exists, Overwrite?</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q05</KEY>
+       <ENTRY>Reverse/Cancel documents</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q06</KEY>
+       <ENTRY>The selected documents will be cancelled/restarted. Do you wish to continue?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T01</KEY>
+       <ENTRY>Log´s</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T02</KEY>
+       <ENTRY>Process</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T03</KEY>
+       <ENTRY>Update</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T04</KEY>
+       <ENTRY>Display printout</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T05</KEY>
+       <ENTRY>Cancel</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T06</KEY>
+       <ENTRY>Upload documents</ENTRY>
+       <LENGTH>64</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T07</KEY>
+       <ENTRY>Void</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T08</KEY>
+       <ENTRY>Details</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>F01</KEY>
+       <ENTRY>TemplateLoadTemplateProducersExt_</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F02</KEY>
+       <ENTRY>UnidadeBR</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F03</KEY>
+       <ENTRY>PesoBRdaUnidade</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F04</KEY>
+       <ENTRY>Peso BR da unidade</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F05</KEY>
+       <ENTRY>UnidLíq</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F06</KEY>
+       <ENTRY>PesoLíqDaUnid</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>F07</KEY>
+       <ENTRY>PesoLíquDaUnid</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H01</KEY>
+       <ENTRY>Produtor</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H02</KEY>
+       <ENTRY>Fatura</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H03</KEY>
+       <ENTRY>Item</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H04</KEY>
+       <ENTRY>DatadaFatura</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H05</KEY>
+       <ENTRY>Solicitante</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H06</KEY>
+       <ENTRY>Empresa</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H07</KEY>
+       <ENTRY>Valor</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H08</KEY>
+       <ENTRY>Moeda</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>H09</KEY>
+       <ENTRY>Material</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P01</KEY>
+       <ENTRY>Processamento de documentos...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P02</KEY>
+       <ENTRY>Cancelamento de documentos...&amp;1% (&amp;2/&amp;3)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q01</KEY>
+       <ENTRY>Exibir documentos carregados</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q02</KEY>
+       <ENTRY>Os documentos foram inseridos corretamente. Deseja visualizar os documentos?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q03</KEY>
+       <ENTRY>Variante de substituição</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q04</KEY>
+       <ENTRY>A variante já existe, Overwrite?</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q05</KEY>
+       <ENTRY>Reverter/Cancelar documentos</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q06</KEY>
+       <ENTRY>Os documentos selecionados serão cancelados/reiniciados. Deseja continuar?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T01</KEY>
+       <ENTRY>Log´s</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T02</KEY>
+       <ENTRY>Processo</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T03</KEY>
+       <ENTRY>Atualização</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T04</KEY>
+       <ENTRY>Exibir impressão</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T05</KEY>
+       <ENTRY>Cancelar</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T06</KEY>
+       <ENTRY>Carregar documentos</ENTRY>
+       <LENGTH>64</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T07</KEY>
+       <ENTRY>Anular</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>T08</KEY>
+       <ENTRY>Detalhes</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje de registro al proceso de carga de archivos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_STRUC_DOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje de registro al proceso de creación de docs.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensajes de registro al proceso de creación de docs.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC_CONV</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensajes de registro al proceso de creación de docs</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_SYSTEM_MESSAGE_DOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje sistema de registro al proceso de creación doc</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUILD_SAMPLE_TEMPLATE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Construir plantilla de ejemplo de archivo de carga</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CALL_VIEW_STACK</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Pila de llamadas de pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CANCEL_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Anula documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CATPRCS_TRADING_TEXTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción tipo de proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CENTER_WINDOW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Determina las coordenadas de una ventana emergente</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLOSE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cerrar Pantallas/Transacción y liberar objetos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COMMIT_WORK_AND_WAIT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Commit work and wait</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COMPLETE_RECORDS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade información adicional a los documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONTENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo Table Monitor Facturas Trading - Reclasificción</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONVERT_CSV_TO_SAP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Convierte archivo CSV a formato SAP</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONVERT_CURRENCY</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Convierte moneda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONV_CURRENCY_TO_EXTERNAL</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Conversión de importes en divisas a visualización externa</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crear documentos trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATAINPUT2CONVEXT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida de conversión a datos de entrada</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEFAULT_VIEW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Vista principal por defecto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEF_VIEW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Dynpro principal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_VARIANT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Delete variant</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOGFILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Visualizar log de proceso de carga de archivo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_MSG_EXCEPTON</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Display message from exception</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOCCAT_TEXTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción clase/tipo documento (Estándar)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOCCAT_TRADING_TEXTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción tipo documento trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOCUMENT_SETTINGS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configuración documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOWNLOAD_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descarga archivo a PC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOWNLOAD_TEMPLATE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descargar plantilla de archivo de carga</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EVENT_CODE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Función ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXTRACT_DOCUMENTS_FROM_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Leer archivo y extraer documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FILE_OPEN_DIALOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ayuda F4 para ruta de archivo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CURRENT_SCREEN_FIELDS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene los campos de la vista actual</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Instancia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_TIMESTAMP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene timestamp</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_VARIANT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene variante</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HANDLE_EVENT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Eventos PBO/PAI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HAS_COMPLETED_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida si el proceso esta terminado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HAS_MANDATORY_FIELDS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida campos obligatorios del archivo de carga</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INIT_CONTROL</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Inicializar pantalla principal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_FILE_FIELDS_VALID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprobar archivo de carga</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_OFFLINE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba si hay pantalla activa</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_SELECTED_ROWS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba selección de registros a procesar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_UNPROCESSED_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba si son documentos pendientes a procesar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_VARIANT_EXISTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Verificación de variante</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_VARIANT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Load variant screen</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOGFILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tp.Tabla Log Archivo Monitor Trading - Reclasificación</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ON_LINK_CLICK</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Control de click (ALV)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ON_USER_COMMAND</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Control de ejecución (ALV)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROCESS_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Procesar documentos (Crea documentos trading)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROCESS_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log proceso</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROGRESS_INDICATOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de progreso</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_CATPRCS_TRADING_TEXT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener descripción de la categoría proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_COORDINATES_DYNPRO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiener coordenadas dynpro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_DOCCAT_TRADING_TEXT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener descripción de la categoría del documento (Trading)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_DOMAINTEXTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene la descripción de los dominios</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_DOMVALUES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>lectura de los valores del dominio fijo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_FILE_SEPARATOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene separador de archivo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mostrar log de proceso de creación de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_MESSAGE_TEXT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene mensaje de texto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_SAVE_INTERCO_DOC_TO_MONI</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Read intercompany purchasing accounting document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_SELECTED_ROWS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene registros a procesar (ID´s)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_SETTINGS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene configuración de creación de lote de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_VIEW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener información de la vista actual</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_DOCUMENT_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guarda log documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_INVOICE_REMARK</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guarda observación en factura venta</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_VARIANT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guarda variante</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREENFIELDS_TO_STRUCTAB</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Transferencia de campos dynpro a estructura (Dinámico)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEARCH_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Búsqueda de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEARCH_DOCUMENTS_BY_KEYS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Búsqueda de documentos por campos claves</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEND</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mostrar interfaz</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Activa dynpro siguiente en modo dialogo modal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_COLUMNS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura campos ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_COLUMNS_DETAILS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura campos ALV (Detalle)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_EDITABLE_COLUMN</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Activa campos editables el SALV Table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_EVENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura eventos ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FILE_PARAMETERS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establecer parámetros de archivo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FUNCTIONCODE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establece la siguiente acción</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FUNCTIONS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura funciones adicionales ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_LAYOUT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura diseño ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_PFSTATUS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establece menu barra pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_SELECTION</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configura formato ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_TITLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establece titulo pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>START_REPORT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Inicia aplicación</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STATUS_TRADING_PRCS_ICON</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estado proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TIMESTAMPL_TO_DATETIME</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Convierte timestamp a fecha-hora</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_CALL_SCREEN_STACK</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Pila de llamadas de pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_HEADERNAME_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de columnas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_PROCESS_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log proceso</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_RSDYNNR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo tabla transfer.p.núms.imagen selección</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_STATUS_TRADING_PRCS_ICON</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estado proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_TRADING_RECLASS_KEY</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Reclassification trading keys</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_CALL_SCREEN_STACK</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Pila de llamada de pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_DEFAULT_VIEW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Dynpro principal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_HEADERNAME_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de columnas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_STATUS_TRADING_PRCS_ICON</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estado proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UL_FILENAME</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de fichero</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UNREGISTER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elimina pantalla de la pila</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPDATE_CONTENT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Actualiza contenido en pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPDATE_DOCUMENT_DB</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Actualiza documento en BD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPLOAD_CSV_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carga Archivo CSV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>USER_CONFIRM_ACTION</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Usuario confirma acción</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VIEW_INFO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Pila de llamada de pantalla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WITH_HEADER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_FILE</CMPNAME>
+     <SCONAME>DETAIL_LEVEL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Nivel de especificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_FILE</CMPNAME>
+     <SCONAME>KEY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clv.Trading - Reclasificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_STRUC_DOC</CMPNAME>
+     <SCONAME>DOCUMENTCATEGORY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo documento procesado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_STRUC_DOC</CMPNAME>
+     <SCONAME>MESSAGE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parámetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC</CMPNAME>
+     <SCONAME>DOCUMENTCATEGORY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo documento procesado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC</CMPNAME>
+     <SCONAME>MESSAGES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC_CONV</CMPNAME>
+     <SCONAME>DOCUMENTCATEGORY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo documento procesado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE_DOC_CONV</CMPNAME>
+     <SCONAME>MESSAGES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de tabla para BAPIRETURN1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_SYSTEM_MESSAGE_DOC</CMPNAME>
+     <SCONAME>DOCUMENTCATEGORY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo documento procesado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUILD_SAMPLE_TEMPLATE</CMPNAME>
+     <SCONAME>CX_CTS_EPS_IO_EXCEPTION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>cCTS IO Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CENTER_WINDOW</CMPNAME>
+     <SCONAME>COORDINATES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Coordenadas pantalla (dynpro)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CENTER_WINDOW</CMPNAME>
+     <SCONAME>DYNPRO_HEIGHT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Entero con signo de 4 bytes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CENTER_WINDOW</CMPNAME>
+     <SCONAME>DYNPRO_WIDTH</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Entero con signo de 4 bytes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COMPLETE_RECORDS</CMPNAME>
+     <SCONAME>ROWS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Filas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>BATCHMODE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Suministro de interfaz offline</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_CSV_TO_SAP</CMPNAME>
+     <SCONAME>CX_CTS_TABLE_CONVERSION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XCLA Fehler</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_CURRENCY</CMPNAME>
+     <SCONAME>DATE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_CURRENCY</CMPNAME>
+     <SCONAME>FOREIGN_CURRENCY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clave de moneda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_CURRENCY</CMPNAME>
+     <SCONAME>LOCAL_CURRENCY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clave de moneda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_CURRENCY</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importe de condición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CURRENCY_TO_EXTERNAL</CMPNAME>
+     <SCONAME>CURRENCY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clave de moneda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CURRENCY_TO_EXTERNAL</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importe de moneda para BAPIs (con 9 decimales)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_DOCUMENTS</CMPNAME>
+     <SCONAME>DOCUMENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Monitor Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEFAULT_VIEW</CMPNAME>
+     <SCONAME>DYNPRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Número de dynpro actual</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEFAULT_VIEW</CMPNAME>
+     <SCONAME>PFSTATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Status-F</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEFAULT_VIEW</CMPNAME>
+     <SCONAME>PROG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Programa de llamada</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEFAULT_VIEW</CMPNAME>
+     <SCONAME>TITLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Menu Painter: Código título</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_LOGFILE</CMPNAME>
+     <SCONAME>CX_ADT_RES_SEG_PARAM_NOT_FOUND</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Segment parameter not found</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOWNLOAD_FILE</CMPNAME>
+     <SCONAME>CX_CTS_EPS_IO_EXCEPTION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>cCTS IO Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXTRACT_DOCUMENTS_FROM_FILE</CMPNAME>
+     <SCONAME>CX_IOS_DOCUMENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Exceptions concerning document interface</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILE_OPEN_DIALOG</CMPNAME>
+     <SCONAME>CX_CTS_EPS_IO_EXCEPTION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>cCTS IO Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILE_OPEN_DIALOG</CMPNAME>
+     <SCONAME>FIELDNAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>ABAP/4: Nombre de SELECT-OPTION / PARAMETERS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILE_OPEN_DIALOG</CMPNAME>
+     <SCONAME>FILENAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fichero local para upload/download</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILE_OPEN_DIALOG</CMPNAME>
+     <SCONAME>SAVE_PARAM</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CURRENT_SCREEN_FIELDS</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla RSPARAMS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>BATCHMODE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>INSTANCE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Trading external growers</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TIMESTAMP</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cronomarcador UTC en forma breve (AAAAMMDDhhmmss)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VARIANT</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HANDLE_EVENT</CMPNAME>
+     <SCONAME>EVENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Código función que ha lanzado PAI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HAS_COMPLETED_DOCUMENTS</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HAS_MANDATORY_FIELDS</CMPNAME>
+     <SCONAME>LINE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Archivo Trading - Reclasificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_FILE_FIELDS_VALID</CMPNAME>
+     <SCONAME>LINE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Archivo Trading - Reclasificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_OFFLINE</CMPNAME>
+     <SCONAME>VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_UNPROCESSED_DOCUMENTS</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROGRESS_INDICATOR</CMPNAME>
+     <SCONAME>PROCESSED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROGRESS_INDICATOR</CMPNAME>
+     <SCONAME>TOTAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_CATPRCS_TRADING_TEXT</CMPNAME>
+     <SCONAME>CATPRCS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo proceso trading</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_CATPRCS_TRADING_TEXT</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto breve explicativo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_COORDINATES_DYNPRO</CMPNAME>
+     <SCONAME>COORDINATES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Coordenadas pantalla (dynpro)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_COORDINATES_DYNPRO</CMPNAME>
+     <SCONAME>DYNPRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Pila de llamada de pantalla</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_DOCCAT_TRADING_TEXT</CMPNAME>
+     <SCONAME>DOCCAT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo documento procesado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_DOCCAT_TRADING_TEXT</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto breve explicativo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_DOMVALUES</CMPNAME>
+     <SCONAME>DOMAIN_NAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Denominación de un dominio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_FILE_SEPARATOR</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto, longitud 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_MESSAGE_TEXT</CMPNAME>
+     <SCONAME>MESSAGE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Control de Facturas Origen Trading (Log)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_MESSAGE_TEXT</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_SAVE_INTERCO_DOC_TO_MONI</CMPNAME>
+     <SCONAME>LINE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Archivo Trading - Reclasificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_SAVE_INTERCO_DOC_TO_MONI</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clv.Trading - Reclasificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_SELECTED_ROWS</CMPNAME>
+     <SCONAME>VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Filas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_SETTINGS</CMPNAME>
+     <SCONAME>DOCUMENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Monitor Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_VIEW</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Pila de llamada de pantalla</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DOCUMENT_LOG</CMPNAME>
+     <SCONAME>DOCKEY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clv.Cabecera Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_INVOICE_REMARK</CMPNAME>
+     <SCONAME>DOCUMENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Monitor Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SCREENFIELDS_TO_STRUCTAB</CMPNAME>
+     <SCONAME>STRUCTABNAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de componente completo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEARCH_DOCUMENTS_BY_KEYS</CMPNAME>
+     <SCONAME>KEYS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Reclassification trading keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <SCONAME>ENDING_X</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <SCONAME>ENDING_Y</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <SCONAME>SCREEN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Número de dynpro actual</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <SCONAME>STARTING_X</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_POPUP</CMPNAME>
+     <SCONAME>STARTING_Y</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FILE_PARAMETERS</CMPNAME>
+     <SCONAME>UL_FILENAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FILE_PARAMETERS</CMPNAME>
+     <SCONAME>WITH_HEADER</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=verdadero, espacio=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FUNCTIONCODE</CMPNAME>
+     <SCONAME>FUNCTIONCODE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Código función que ha lanzado PAI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_PFSTATUS</CMPNAME>
+     <SCONAME>PFSTATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Status-F</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TITLE</CMPNAME>
+     <SCONAME>TITLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Menu Painter: Código título</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TIMESTAMPL_TO_DATETIME</CMPNAME>
+     <SCONAME>TS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cronomarcador UTC en forma expl.(AAAAMMDDhhmmssmmmuuun)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TIMESTAMPL_TO_DATETIME</CMPNAME>
+     <SCONAME>VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>19 caracteres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CONTENT</CMPNAME>
+     <SCONAME>CX_TRPA_NO_VALUE_SELECTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Exception raised if no classifier value has been selected</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CONTENT</CMPNAME>
+     <SCONAME>SEL_ROW</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Posición de cursos vertical en PAI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_DOCUMENT_DB</CMPNAME>
+     <SCONAME>DOCUMENT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura Monitor Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_CSV_FILE</CMPNAME>
+     <SCONAME>CX_CTS_EPS_IO_EXCEPTION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>cCTS IO Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_CSV_FILE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo Tabla Archivo Facturas Trading - Productores Externos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>USER_CONFIRM_ACTION</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elem.datos p.dominio BOOLE: VERDADERO (=&quot;X&quot;) y FALSO (=&quot; &quot;)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

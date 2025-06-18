@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_APPLICATION_LOG</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Application Log</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <RSTAT>P</RSTAT>
+    <MSG_ID>ZAPP_LOG</MSG_ID>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade un mensaje al registro de la aplicación</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_STRUCT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade un mensaje BAL_S_MSG al registro de la aplicación</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_TABLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensajes al registro desde una tabla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_SYSTEM_MESSAGE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje al resgistro desde variable de sistema</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLOSE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Escribe el registro de la aplicación en la base de datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEFAULT_MSGID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase de mensajes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Muestra el registro guardado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_DETLEVEL</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Muestra el registro guardado (Modo por Detalle-Nivel)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXTNUMBER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Identificación externa</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_PROBCLASS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Deriva la clase de problema del tipo de mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOG_HANDLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de aplicación: Programa de control de un log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOG_OBJECT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Nombre objeto (sigla de aplicación)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOG_SUBOBJECT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Objeto inferior</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAX_PROBCLASS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Clase de problema de mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OPEN</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Abre un nuevo registro</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>DETAIL_LEVEL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Nivel de especificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>LOGGING_ERROR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Logging API returned an error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGID</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase de mensajes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGNO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGTY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGV1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGV2</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGV3</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>MSGV4</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLOSE</CMPNAME>
+     <SCONAME>LOG_NUMBER</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de aplicación: Número de log</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

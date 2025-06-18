@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMC_TRADING_SRV</ARBGB>
+    <MASTERLANG>S</MASTERLANG>
+    <STEXT>Cl.mensaje proceso trading</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Documento origen &amp; ya existe,¿Desea visualizar el documento?</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Documento origen &amp; no puede ser ingresado,no cumple condición de ingreso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Documento origen &amp; esta anulado o no vigente, proceso cancelado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Documento origen &amp; ingresado correctamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Doc.origen &amp; ingresado correctamente,¿Desea visualizar el documento?</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Seleccione documentos pendientes a procesar</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Adaptador base ALV no permitido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>No se ha encontrado cliente para Soc. &amp;1 Of.vta. &amp;2 Tipo &amp;3 Interl. &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>No se ha encontrado proveedor para sociedad &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>No se han encontrado datos de configuración de pedido de venta Soc.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>No se han encontrado datos de configuración de pedido de compra Soc.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>No se ha encontrado lote/libro para sociedad &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>No se han encontrado materiales homologados para sociedad &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Pila &amp;1 Libro &amp;2 esta completo, asignar nueva pila/libro</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>No se han encontrados datos de configuración financiera para Soc.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>IDPacking(Po Ext.) para entrega &amp; no existe, obtener por TX ZSD_DELIV_SRV</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>La Pila &amp;1 Libro &amp;2 esta completo, asignar nueva pila/libro en mantenedor</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Documento origen: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Proceso de cancelación de documentos realizado, verificar log</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Contenedor no asignado en pedido origen &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>No existe material homologado para Gpo.artíc &amp;1 soc.&amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>&amp; Entradas encontradas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Posiciones del pedido &amp;1 borradas con éxito</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Documento de facturación &amp;1 anulado con éxito</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Documento de facturación &amp;1 anulación fallida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Posiciones del pedido &amp;1 rechazadas con éxito</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Documento de facturación trading no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>PDF no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>No se han encontrado datos de config.de Func.Interl.Compras HFIM Soc.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Doc.compra HFI1 para entrega &amp; no existe, obtener por TX ZSD_DELIV_SRV</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>No esta activo proceso HFIM para Soc. &amp;1 Of.vta. &amp;2 Tipo &amp;3 Interl. &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Productor: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Productor/Documento origen: &amp;1 - &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Productor esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Folio Factura esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Fecha Factura esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Solicitante esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Sociedad esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Moneda esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Contenedor esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Puerto Destino esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Puerto Embarque esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Consignatario esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Fecha Embarque esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>ETA esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>ETA Real esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>N° Posición esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>Monto esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>N° Material esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Cantidad esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>El productor &amp;1 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Documento origen &amp;1-&amp;2 ya existe, anule para cargar nuevamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>El solicitante &amp;1 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Sociedad &amp;1 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Clave de moneda &amp;1 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Posición &amp;1: Clave de moneda &amp;2 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Posición &amp;1: Material &amp;2 no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>Posición &amp;1: Un.Medida CJ(Caja) no existe para Material &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Documento origen &amp;1-&amp;2 ingresado correctamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>No se han encontrados datos de configuración financiera para proveedor.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>Seleccione documentos procesados o con error</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>Documentos han sido reversados o anulados satisfactoriamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>Documentos procesados,revisar logs</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Factura de compra trading no existe para nota crédito/débito origen &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>Fecha contabilización esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>Unidad de medida esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>Temporada esta vacío</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Unidad de Medida no existe</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>070</MSGNR>
+     <TEXT>No se ha encontrado asiento contable de compras o ya existe en el monitor</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>071</MSGNR>
+     <TEXT>Asiento contable &amp;1 &amp;2 &amp;3 ingresado correctamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>072</MSGNR>
+     <TEXT>No se ha encontrado configuración del documento contable de compra Soc.&amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>073</MSGNR>
+     <TEXT>Documentos han sido anulados satisfactoriamente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>074</MSGNR>
+     <TEXT>Factura de compra &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>075</MSGNR>
+     <TEXT>Sociedad/Referencia/Fch.Contable &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+    <LANGU>F</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <STEXT>Trading process msg.cl</STEXT>
+    </T100T>
+    <T100T>
+     <SPRSL>F</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <STEXT>Trading process msg.cl</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Source document &amp; already exists, Do you want to view the document?</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Source document &amp; cannot be entered, does not meet entry condition</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Source document is canceled or not valid, process canceled</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Source document &amp; correctly entered</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Source document &amp; entered correctly,Do you want to view the document?</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>Select pending documents to process</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>ALV base adapter not allowed</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>No client found for compnany code &amp;1 sales office &amp;2 Type &amp;3 partner &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>No supplier found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>No sales order configuration data Found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>No purchase order configuration data found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>No lot/book found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>No approved materials have been found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Lot &amp;1 Book &amp;2 is complete, assign a new one</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>No financial configuration data found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>IDPacking (Ext.PO) for delivery &amp; does not exist, get by TX ZSD_DELIV_SRV</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>Lot &amp;1 Book &amp;2 is complete, assign a new one in maintainer</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Source document: &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>020</MSGNR>
+     <TEXT>Document cancellation process performed, check log</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>021</MSGNR>
+     <TEXT>Destination container not assigned in source order &amp;</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>022</MSGNR>
+     <TEXT>Material approved for art.group &amp;1 company code &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>023</MSGNR>
+     <TEXT>&amp; Entries found</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>024</MSGNR>
+     <TEXT>Order items &amp;1 deleted successfully</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>025</MSGNR>
+     <TEXT>Billing document &amp;1 canceled successfully</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>026</MSGNR>
+     <TEXT>Billing document &amp;1 cancellation failed</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>027</MSGNR>
+     <TEXT>Order items &amp;1 successfully rejected</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>028</MSGNR>
+     <TEXT>Trading billing document does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>029</MSGNR>
+     <TEXT>PDF doesn&apos;t exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>030</MSGNR>
+     <TEXT>No configuration data found for purchasing partner role HFIM Soc.&amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>031</MSGNR>
+     <TEXT>Doc.purchase HFI1 for delivery &amp; does not exist, get by TX ZSD_DELIV_SRV</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>032</MSGNR>
+     <TEXT>HFIM process is not active for Soc. &amp;1 Of.vta. &amp;2 Type &amp;3 Interl. &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>033</MSGNR>
+     <TEXT>Grower: &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>034</MSGNR>
+     <TEXT>Grower/Source document: &amp;1 - &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>035</MSGNR>
+     <TEXT>Grower is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>036</MSGNR>
+     <TEXT>External invoice number is blank</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>037</MSGNR>
+     <TEXT>Invoice date is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>038</MSGNR>
+     <TEXT>Sold-to-Party is blank</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>039</MSGNR>
+     <TEXT>Company code is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>040</MSGNR>
+     <TEXT>Currency is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>041</MSGNR>
+     <TEXT>Container is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>042</MSGNR>
+     <TEXT>Destination Port is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>043</MSGNR>
+     <TEXT>Loading Port is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>044</MSGNR>
+     <TEXT>Consignee is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>045</MSGNR>
+     <TEXT>Date of shipment is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>046</MSGNR>
+     <TEXT>ETA is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>047</MSGNR>
+     <TEXT>Real ETa is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>048</MSGNR>
+     <TEXT>Position No. is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>049</MSGNR>
+     <TEXT>Amount is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>050</MSGNR>
+     <TEXT>Material is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>051</MSGNR>
+     <TEXT>Quantity is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>052</MSGNR>
+     <TEXT>Grower &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>053</MSGNR>
+     <TEXT>Source document &amp;1-&amp;2 already exists, cancel to load again</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>054</MSGNR>
+     <TEXT>Sold-to-Party &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>055</MSGNR>
+     <TEXT>Company code &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>056</MSGNR>
+     <TEXT>Currency key &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>057</MSGNR>
+     <TEXT>Item &amp;1: Currency key &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>058</MSGNR>
+     <TEXT>Item &amp;1: Material &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>059</MSGNR>
+     <TEXT>Item &amp;1: A.Meas.Unit CJ(Box) does not exist for Material &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>060</MSGNR>
+     <TEXT>Source document &amp;1-&amp;2 entered correctly</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>061</MSGNR>
+     <TEXT>No financial configuration data found for vendor &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>062</MSGNR>
+     <TEXT>Select documents processed or with error</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>063</MSGNR>
+     <TEXT>Documents have been successfully reversed or annulled</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>064</MSGNR>
+     <TEXT>Processed documents, review logs</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>065</MSGNR>
+     <TEXT>Trading purchase invoice does not exist for source credit/debit memo &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Source document &amp; already exists, Do you want to view the document?</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Source document &amp; cannot be entered, does not meet entry condition</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Source document is canceled or not valid, process canceled</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Source document &amp; correctly entered</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Source document &amp; entered correctly,Do you want to view the document?</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>Select pending documents to process</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>ALV base adapter not allowed</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>No client found for compnany code &amp;1 sales office &amp;2 Type &amp;3 partner &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>No supplier found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>No sales order configuration data Found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>No purchase order configuration data found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>No lot/book found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>No approved materials have been found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Lot &amp;1 Book &amp;2 is complete, assign a new one</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>No financial configuration data found for company code &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>IDPacking (Ext.PO) for delivery &amp; does not exist, get by TX ZSD_DELIV_SRV</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>Lot &amp;1 Book &amp;2 is complete, assign a new one in maintainer</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Source document: &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>020</MSGNR>
+     <TEXT>Successfully reversed/cancelled documents</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>021</MSGNR>
+     <TEXT>Destination container not assigned in source order &amp;</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>022</MSGNR>
+     <TEXT>Material approved for art.group &amp;1 company code &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>023</MSGNR>
+     <TEXT>&amp; Entries found</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>024</MSGNR>
+     <TEXT>Order items &amp;1 deleted successfully</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>025</MSGNR>
+     <TEXT>Billing document &amp;1 canceled successfully</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>026</MSGNR>
+     <TEXT>Billing document &amp;1 cancellation failed</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>027</MSGNR>
+     <TEXT>Order items &amp;1 successfully rejected</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>028</MSGNR>
+     <TEXT>Trading billing document does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>029</MSGNR>
+     <TEXT>PDF doesn&apos;t exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>030</MSGNR>
+     <TEXT>No configuration data found for purchasing partner role HFIM Soc.&amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>031</MSGNR>
+     <TEXT>Doc.purchase HFI1 for delivery &amp; does not exist, get by TX ZSD_DELIV_SRV</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>032</MSGNR>
+     <TEXT>HFIM process is not active for Soc. &amp;1 Of.vta. &amp;2 Type &amp;3 Interl. &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>033</MSGNR>
+     <TEXT>Grower: &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>034</MSGNR>
+     <TEXT>Grower/Source document: &amp;1 - &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>035</MSGNR>
+     <TEXT>Grower is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>036</MSGNR>
+     <TEXT>External invoice number is blank</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>037</MSGNR>
+     <TEXT>Invoice date is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>038</MSGNR>
+     <TEXT>Sold-to-Party is blank</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>039</MSGNR>
+     <TEXT>Company code is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>040</MSGNR>
+     <TEXT>Currency is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>041</MSGNR>
+     <TEXT>Container is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>042</MSGNR>
+     <TEXT>Destination Port is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>043</MSGNR>
+     <TEXT>Loading Port is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>044</MSGNR>
+     <TEXT>Consignee is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>045</MSGNR>
+     <TEXT>Date of shipment is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>046</MSGNR>
+     <TEXT>ETA is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>047</MSGNR>
+     <TEXT>Real ETa is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>048</MSGNR>
+     <TEXT>Position No. is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>049</MSGNR>
+     <TEXT>Amount is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>050</MSGNR>
+     <TEXT>Material is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>051</MSGNR>
+     <TEXT>Quantity is empty</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>052</MSGNR>
+     <TEXT>Grower &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>053</MSGNR>
+     <TEXT>Source document &amp;1-&amp;2 already exists, cancel to load again</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>054</MSGNR>
+     <TEXT>Sold-to-Party &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>055</MSGNR>
+     <TEXT>Company code &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>056</MSGNR>
+     <TEXT>Currency key &amp;1 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>057</MSGNR>
+     <TEXT>Item &amp;1: Currency key &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>058</MSGNR>
+     <TEXT>Item &amp;1: Material &amp;2 does not exist</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>059</MSGNR>
+     <TEXT>Item &amp;1: A.Meas.Unit CJ(Box) does not exist for Material &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>060</MSGNR>
+     <TEXT>Source document &amp;1-&amp;2 entered correctly</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>061</MSGNR>
+     <TEXT>No financial configuration data found for vendor &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>062</MSGNR>
+     <TEXT>Select documents processed or with error</TEXT>
+    </item>
+    <item>
+     <SPRSL>F</SPRSL>
+     <MSGNR>063</MSGNR>
+     <TEXT>Documents have been successfully reversed or annulled</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
