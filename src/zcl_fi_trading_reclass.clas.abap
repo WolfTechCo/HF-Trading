@@ -1,21 +1,22 @@
-CLASS zcl_fi_trading_reclass DEFINITION
-  PUBLIC FINAL
-  CREATE PRIVATE.
+class ZCL_FI_TRADING_RECLASS definition
+  public
+  final
+  create private .
 
-  PUBLIC SECTION.
-    TYPES:
-      BEGIN OF ts_acc_doc_ext_fi,
+public section.
+
+  types:
+    BEGIN OF ts_acc_doc_ext_fi,
         itemno   TYPE posnr_acc,
         xref1_hd TYPE xref1_hd,
         xref2_hd TYPE xref2_hd,
-      END OF ts_acc_doc_ext_fi.
-
-    TYPES ty_call_screen_stack TYPE zst99_call_screen_stack.
-    TYPES tt_call_screen_stack TYPE STANDARD TABLE OF ty_call_screen_stack
-                               WITH NON-UNIQUE KEY event prog screen subscreen.
-
-    TYPES:
-      BEGIN OF ENUM document_category_trading
+      END OF ts_acc_doc_ext_fi .
+  types TY_CALL_SCREEN_STACK type ZST99_CALL_SCREEN_STACK .
+  types:
+    tt_call_screen_stack TYPE STANDARD TABLE OF ty_call_screen_stack
+                               WITH NON-UNIQUE KEY event prog screen subscreen .
+  types:
+    BEGIN OF ENUM document_category_trading
         STRUCTURE doccattrading
         BASE TYPE zde_document_type_trading,
 
@@ -29,10 +30,10 @@ CLASS zcl_fi_trading_reclass DEFINITION
         sdinvoice               VALUE 'M',
         creditnote              VALUE 'O',
         incominginvoice         VALUE 'R',
-      END OF ENUM document_category_trading STRUCTURE doccattrading.
+      END OF ENUM document_category_trading STRUCTURE doccattrading .
 
-    CONSTANTS:
-      BEGIN OF status_trading_prcs,
+  constants:
+    BEGIN OF status_trading_prcs,
         unprocessed          TYPE zde_status_trading_process VALUE 'N',
         processed            TYPE zde_status_trading_process VALUE 'P',
         partially_processed  TYPE zde_status_trading_process VALUE 'I',
@@ -40,65 +41,71 @@ CLASS zcl_fi_trading_reclass DEFINITION
         cancelled            TYPE zde_status_trading_process VALUE 'C',
         cancelallation_error TYPE zde_status_trading_process VALUE 'D',
         error                TYPE zde_status_trading_process VALUE 'E',
-      END OF status_trading_prcs.
+      END OF status_trading_prcs .
+  class-data MO_INSTANCE type ref to ZCL_FI_TRADING_RECLASS .
+  class-data OFFLINE type /PM0/ABD_OFFLINE_FG .
 
-    CLASS-DATA mo_instance TYPE REF TO zcl_fi_trading_reclass.
-    CLASS-DATA offline     TYPE /pm0/abd_offline_fg.
+  class-methods GET_INSTANCE
+    importing
+      !BATCHMODE type SAP_BOOL default ABAP_FALSE
+    returning
+      value(INSTANCE) type ref to ZCL_FI_TRADING_RECLASS .
+  methods DEFAULT_VIEW
+    importing
+      !DYNPRO type SYST_DYNNR
+      !PROG type SYST_CPROG
+      !PFSTATUS type PFSTATUS
+      !TITLE type GUI_TITLE .
+  methods FILE_OPEN_DIALOG
+    importing
+      !DEFAULT_EXTENSION type STRING default '*.CSV'
+      !DEFAULT_FILENAME type STRING default SPACE
+      !FILE_FILTER type STRING default '*.CSV'
+      !FIELDNAME type RSSELREAD-NAME default SPACE
+      !SAVE_PARAM type SAP_BOOL default ABAP_FALSE
+    returning
+      value(FILENAME) type RLGRAP-FILENAME
+    raising
+      CX_CTS_EPS_IO_EXCEPTION .
+  methods HANDLE_EVENT
+    importing
+      !EVENT type SYST_UCOMM .
+  methods IS_OFFLINE
+    returning
+      value(VALUE) type SAP_BOOL .
+  methods READ_VIEW
+    returning
+      value(RESULT) type TY_CALL_SCREEN_STACK .
+  methods SEND .
+  methods SET_FILE_PARAMETERS
+    importing
+      !UL_FILENAME type STRING
+      !WITH_HEADER type SAP_BOOL default ABAP_TRUE .
+private section.
 
-    CLASS-METHODS get_instance
-      IMPORTING batchmode       TYPE sap_bool DEFAULT abap_false
-      RETURNING VALUE(instance) TYPE REF TO zcl_fi_trading_reclass.
-
-    METHODS default_view
-      IMPORTING !dynpro  TYPE syst_dynnr
-                prog     TYPE syst_cprog
-                pfstatus TYPE pfstatus
-                !title   TYPE gui_title.
-
-    METHODS file_open_dialog
-      IMPORTING default_extension TYPE string         DEFAULT '*.CSV'
-                default_filename  TYPE string         DEFAULT space
-                file_filter       TYPE string         DEFAULT '*.CSV'
-                fieldname         TYPE rsselread-name DEFAULT space
-                save_param        TYPE sap_bool       DEFAULT abap_false
-      RETURNING VALUE(filename)   TYPE rlgrap-filename
-      RAISING   cx_cts_eps_io_exception.
-
-    METHODS handle_event
-      IMPORTING !event TYPE syst_ucomm.
-
-    METHODS is_offline
-      RETURNING VALUE(value) TYPE sap_bool.
-
-    METHODS read_view
-      RETURNING VALUE(result) TYPE ty_call_screen_stack.
-
-    METHODS send.
-
-    METHODS set_file_parameters
-      IMPORTING ul_filename TYPE string
-                with_header TYPE sap_bool DEFAULT abap_true.
-
-  PRIVATE SECTION.
-    TYPES:
-      BEGIN OF ty_headername_file,
+  types:
+    BEGIN OF ty_headername_file,
         field TYPE char50,
-      END OF ty_headername_file.
-    TYPES tt_headername_file TYPE STANDARD TABLE OF ty_headername_file WITH EMPTY KEY.
-    TYPES tt_process_log     TYPE STANDARD TABLE OF zst_trading_log WITH EMPTY KEY.
-    TYPES tt_rsdynnr         TYPE STANDARD TABLE OF rsdynnr WITH EMPTY KEY.
-    TYPES:
-      BEGIN OF ty_status_trading_prcs_icon,
+      END OF ty_headername_file .
+  types:
+    tt_headername_file TYPE STANDARD TABLE OF ty_headername_file WITH EMPTY KEY .
+  types:
+    tt_process_log     TYPE STANDARD TABLE OF zst_trading_log WITH EMPTY KEY .
+  types:
+    tt_rsdynnr         TYPE STANDARD TABLE OF rsdynnr WITH EMPTY KEY .
+  types:
+    BEGIN OF ty_status_trading_prcs_icon,
         status TYPE zde_status_trading_process,
         icon   TYPE icon_d,
-      END OF ty_status_trading_prcs_icon.
-    TYPES tt_status_trading_prcs_icon TYPE SORTED TABLE OF ty_status_trading_prcs_icon WITH UNIQUE KEY status.
-    TYPES:
-      BEGIN OF ts_document_settings,
+      END OF ty_status_trading_prcs_icon .
+  types:
+    tt_status_trading_prcs_icon TYPE SORTED TABLE OF ty_status_trading_prcs_icon WITH UNIQUE KEY status .
+  types:
+    BEGIN OF ts_document_settings,
         purchase_accounting_document TYPE ZCDS_I_TradingReclassMdPo,
-      END OF ts_document_settings.
-    TYPES:
-      BEGIN OF ts_search_documents_parameters,
+      END OF ts_document_settings .
+  types:
+    BEGIN OF ts_search_documents_parameters,
         docuuid  TYPE RANGE OF ztbfi_trd_reclas-documentuuid,
         ccode    TYPE RANGE OF ztbfi_trd_reclas-companycode,
         accdoc   TYPE RANGE OF ztbfi_trd_reclas-accountingdocument,
@@ -114,292 +121,299 @@ CLASS zcl_fi_trading_reclass DEFINITION
         ccodest  TYPE RANGE OF ztbfi_trd_reclas-companycodesettlement,
         accdocst TYPE RANGE OF ztbfi_trd_reclas-accountingdocumentsettlement,
         fyearst  TYPE RANGE OF ztbfi_trd_reclas-fiscalyearsettlement,
-      END OF ts_search_documents_parameters.
-    TYPES:
-      BEGIN OF ty_default_view,
+      END OF ts_search_documents_parameters .
+  types:
+    BEGIN OF ty_default_view,
         dynpro   TYPE syst_dynnr,
         prog     TYPE syst_cprog,
         title    TYPE gui_title,
         pfstatus TYPE pfstatus,
-      END OF ty_default_view.
-    TYPES tt_trading_reclass_key TYPE SORTED TABLE OF zstfi_trading_reclass_key WITH UNIQUE KEY DocumentUUID.
+      END OF ty_default_view .
+  types:
+    tt_trading_reclass_key TYPE SORTED TABLE OF zstfi_trading_reclass_key WITH UNIQUE KEY DocumentUUID .
 
-    DATA call_view_stack          TYPE tt_call_screen_stack.
-    DATA catprcs_trading_texts    TYPE dd07v_tab.
-    DATA contents                 TYPE zttfi_trading_reclass.
-    DATA def_view                 TYPE ty_default_view.
-    DATA doccat_texts             TYPE dd07v_tab.
-    DATA doccat_trading_texts     TYPE dd07v_tab.
-    DATA document_settings        TYPE ts_document_settings.
-    DATA dummy_message            TYPE string.
-    DATA event_code               TYPE salv_de_function.
-    DATA extension_helper         TYPE REF TO /dmbe/cli_extension_in_helper.
-    DATA logfile                  TYPE zttfi_trading_reclass_logfile.
-    DATA mo_salv_table            TYPE REF TO cl_salv_table.
-    DATA mo_salv_table_popup      TYPE REF TO cl_salv_table.
-    DATA process_log              TYPE tt_process_log.
-    DATA status_trading_prcs_icon TYPE tt_status_trading_prcs_icon.
-    DATA ul_filename              TYPE string.
-    DATA view_info                TYPE ty_call_screen_stack.
-    DATA with_header              TYPE sap_bool.
+  data CALL_VIEW_STACK type TT_CALL_SCREEN_STACK .
+  data CATPRCS_TRADING_TEXTS type DD07V_TAB .
+  data CONTENTS type ZTTFI_TRADING_RECLASS .
+  data DEF_VIEW type TY_DEFAULT_VIEW .
+  data DOCCAT_TEXTS type DD07V_TAB .
+  data DOCCAT_TRADING_TEXTS type DD07V_TAB .
+  data DOCUMENT_SETTINGS type TS_DOCUMENT_SETTINGS .
+  data DUMMY_MESSAGE type STRING .
+  data EVENT_CODE type SALV_DE_FUNCTION .
+  data EXTENSION_HELPER type ref to /DMBE/CLI_EXTENSION_IN_HELPER .
+  data LOGFILE type ZTTFI_TRADING_RECLASS_LOGFILE .
+  data MO_SALV_TABLE type ref to CL_SALV_TABLE .
+  data MO_SALV_TABLE_POPUP type ref to CL_SALV_TABLE .
+  data PROCESS_LOG type TT_PROCESS_LOG .
+  data STATUS_TRADING_PRCS_ICON type TT_STATUS_TRADING_PRCS_ICON .
+  data UL_FILENAME type STRING .
+  data VIEW_INFO type TY_CALL_SCREEN_STACK .
+  data WITH_HEADER type SAP_BOOL .
 
-    METHODS add_message_file
-      IMPORTING !key         TYPE zstfi_trading_reclass_file_key
-                detail_level TYPE ballevel OPTIONAL.
-
-    METHODS add_message_struc_doc
-      IMPORTING !message         TYPE bapiret2
-                documentcategory TYPE document_category_trading DEFAULT space.
-
-    METHODS add_message_table_doc
-      IMPORTING !messages        TYPE bapiret2_t
-                documentcategory TYPE document_category_trading DEFAULT space.
-
-    METHODS add_message_table_doc_conv
-      IMPORTING !messages        TYPE fm_t_bapireturn1
-                documentcategory TYPE document_category_trading DEFAULT space.
-
-    METHODS add_system_message_doc
-      IMPORTING documentcategory TYPE document_category_trading DEFAULT space.
-
-    METHODS build_extension_in
-      IMPORTING document      TYPE REF TO zstsd_trading_ext
-      RETURNING VALUE(result) TYPE bapiparex_t.
-
-    METHODS build_sample_template
-      RETURNING VALUE(result) TYPE REF TO truxs_t_text_data
-      RAISING   cx_cts_eps_io_exception.
-
-    METHODS cancel_documents.
-
-    METHODS center_window
-      IMPORTING dynpro_height      TYPE int4
-                dynpro_width       TYPE int4
-      RETURNING VALUE(coordinates) TYPE zst99_screen_coordinates.
-
-    METHODS close.
-    METHODS commit_work_and_wait.
-
-    METHODS complete_records
-      IMPORTING !rows TYPE salv_t_row OPTIONAL.
-
-    METHODS constructor
-      IMPORTING batchmode TYPE /pm0/abd_offline_fg OPTIONAL.
-
-    METHODS convert_csv_to_sap
-      IMPORTING VALUE(csv)     TYPE truxs_t_text_data
-      EXPORTING data_converted TYPE STANDARD TABLE
-      RAISING   cx_cts_table_conversion.
-
-    METHODS convert_currency
-      IMPORTING !date            TYPE datum
-                foreign_currency TYPE waers
-                local_amount     TYPE any
-                local_currency   TYPE waers
-      RETURNING VALUE(result)    TYPE bapikbetr1.
-
-    METHODS conv_currency_to_external
-      IMPORTING !currency     TYPE tcurc-waers
-                amt_internal  TYPE any
-      RETURNING VALUE(result) TYPE bapicurext.
-
-    "! <p class="shorttext synchronized" lang="es">Crear documentos trading</p>
+  methods ADD_MESSAGE_FILE
+    importing
+      !KEY type ZSTFI_TRADING_RECLASS_FILE_KEY
+      !DETAIL_LEVEL type BALLEVEL optional .
+  methods ADD_MESSAGE_STRUC_DOC
+    importing
+      !MESSAGE type BAPIRET2
+      !DOCUMENTCATEGORY type DOCUMENT_CATEGORY_TRADING default SPACE .
+  methods ADD_MESSAGE_TABLE_DOC
+    importing
+      !MESSAGES type BAPIRET2_T
+      !DOCUMENTCATEGORY type DOCUMENT_CATEGORY_TRADING default SPACE .
+  methods ADD_MESSAGE_TABLE_DOC_CONV
+    importing
+      !MESSAGES type FM_T_BAPIRETURN1
+      !DOCUMENTCATEGORY type DOCUMENT_CATEGORY_TRADING default SPACE .
+  methods ADD_SYSTEM_MESSAGE_DOC
+    importing
+      !DOCUMENTCATEGORY type DOCUMENT_CATEGORY_TRADING default SPACE .
+  methods BUILD_SAMPLE_TEMPLATE
+    returning
+      value(RESULT) type ref to TRUXS_T_TEXT_DATA
+    raising
+      CX_CTS_EPS_IO_EXCEPTION .
+  methods CANCEL_DOCUMENTS .
+  methods CENTER_WINDOW
+    importing
+      !DYNPRO_HEIGHT type INT4
+      !DYNPRO_WIDTH type INT4
+    returning
+      value(COORDINATES) type ZST99_SCREEN_COORDINATES .
+  methods CLOSE .
+  methods COMMIT_WORK_AND_WAIT .
+  methods COMPLETE_RECORDS
+    importing
+      !ROWS type SALV_T_ROW optional .
+  methods CONSTRUCTOR
+    importing
+      !BATCHMODE type /PM0/ABD_OFFLINE_FG optional .
+  methods CONVERT_CSV_TO_SAP
+    importing
+      value(CSV) type TRUXS_T_TEXT_DATA
+    exporting
+      !DATA_CONVERTED type STANDARD TABLE
+    raising
+      CX_CTS_TABLE_CONVERSION .
+  methods CONVERT_CURRENCY
+    importing
+      !DATE type DATUM
+      !FOREIGN_CURRENCY type WAERS
+      !LOCAL_AMOUNT type ANY
+      !LOCAL_CURRENCY type WAERS
+    returning
+      value(RESULT) type BAPIKBETR1 .
+  methods CONV_CURRENCY_TO_EXTERNAL
+    importing
+      !CURRENCY type TCURC-WAERS
+      !AMT_INTERNAL type ANY
+    returning
+      value(RESULT) type BAPICUREXT .
+  methods CREATE_DOCUMENTS
+    changing
+      !DOCUMENT type ref to ZSTFI_TRADING_RECLASS .
+    "! <p class="shorttext synchronized" lang="es">Crea documento contable de liquidación</p>
     "!
-    "! @parameter document | <p class="shorttext synchronized" lang="es">Monitor Trading Reclasificación  </p>
-    METHODS create_settlement_acc_document
-      CHANGING document TYPE REF TO zstfi_trading_reclass.
-
-    METHODS create_documents
-      CHANGING document TYPE REF TO zstfi_trading_reclass.
-
-    METHODS datainput2convext
-      CHANGING input_table TYPE ANY TABLE.
-
-    METHODS delete_variant.
-
-    METHODS display_logfile
-      RAISING cx_adt_res_seg_param_not_found.
-
-    METHODS display_msg_excepton
-      IMPORTING !exception TYPE REF TO cx_root.
-
-    METHODS download_file
-      IMPORTING filename     TYPE string
-                !directory   TYPE string OPTIONAL
-                file_content TYPE REF TO data
-      RAISING   cx_cts_eps_io_exception.
-
-    METHODS download_template.
-
-    METHODS exception_to_bapiret2
-      IMPORTING !exception    TYPE REF TO cx_root
-      RETURNING VALUE(result) TYPE bapirettab.
-
-    METHODS extract_documents_from_file
-      RAISING cx_ios_document.
-
-    METHODS get_current_screen_fields
-      RETURNING VALUE(result) TYPE rsparams_tt.
-
-    METHODS get_timestamp
-      RETURNING VALUE(result) TYPE timestamp.
-
-    METHODS get_variant
-      RETURNING VALUE(result) TYPE rsvar-variant
-      RAISING   cx_ci_invalid_variant.
-
-    METHODS has_completed_documents
-      RETURNING VALUE(result) TYPE sap_bool.
-
-    METHODS has_mandatory_fields
-      IMPORTING !line                       TYPE zstfi_trading_reclass_file
-      RETURNING VALUE(has_mandatory_fields) TYPE abap_bool.
-
-    METHODS init_control.
-
-    METHODS is_file_fields_valid
-      IMPORTING !line        TYPE zstfi_trading_reclass_file
-      RETURNING VALUE(value) TYPE abap_bool.
-
-    METHODS is_selected_rows
-      IMPORTING max_one      TYPE abap_bool OPTIONAL
-      RETURNING VALUE(value) TYPE abap_bool.
-
-    METHODS is_unprocessed_documents
-      RETURNING VALUE(result) TYPE sap_bool.
-
-    METHODS is_variant_exists
-      RETURNING VALUE(result) TYPE abap_bool.
-
-    METHODS load_variant.
-
-    METHODS on_link_click
-      FOR EVENT link_click OF cl_salv_events_table
-      IMPORTING !row
-                !column.
-
-    METHODS on_user_command
-      FOR EVENT added_function OF cl_salv_events
-      IMPORTING e_salv_function.
-
-    METHODS process_documents.
-
-    METHODS progress_indicator
-      IMPORTING !text     TYPE any
-                processed TYPE sy-tabix
-                !total    TYPE sy-tabix.
-
-    METHODS read_catprcs_trading_text
-      IMPORTING catprcs       TYPE zde_type_trading_process
-      RETURNING VALUE(result) TYPE ddtext.
-
-    METHODS read_coordinates_dynpro
-      IMPORTING !dynpro            TYPE ty_call_screen_stack
-      RETURNING VALUE(coordinates) TYPE zst99_screen_coordinates.
-
-    METHODS read_doccat_trading_text
-      IMPORTING doccat        TYPE zde_document_type_trading
-      RETURNING VALUE(result) TYPE ddtext.
-
-    METHODS read_domaintexts.
-
-    METHODS read_domvalues
-      IMPORTING domain_name   TYPE domname
-      RETURNING VALUE(result) TYPE dd07v_t.
-
-    METHODS read_file_separator
-      RETURNING VALUE(result) TYPE char1.
-
-    METHODS read_log.
-
-    METHODS read_message_text
-      IMPORTING !message      TYPE zst_trading_log
-      RETURNING VALUE(result) TYPE bapi_msg.
-
-    METHODS read_selected_rows
-      RETURNING VALUE(value) TYPE salv_t_row.
-
-    METHODS read_settings
-      IMPORTING document TYPE zstfi_trading_reclass
-      RAISING   zcx_trading.
-
-    METHODS register.
-
-    METHODS save_document_log
-      IMPORTING dockey TYPE ztbfi_trd_reclas-%key.
-
-    METHODS save_invoice_remark
-      IMPORTING document TYPE REF TO zstsd_trading_ext.
-
-    METHODS save_variant.
-
-    METHODS screenfields_to_structab
-      IMPORTING structabname    TYPE seocpdname
-      RETURNING VALUE(structab) TYPE REF TO data.
-
-    METHODS search_documents.
-
-    METHODS search_documents_by_keys
-      IMPORTING !keys TYPE tt_trading_reclass_key.
-
-    METHODS send_popup
-      IMPORTING !screen    TYPE syst_dynnr
-                starting_x TYPE syst_tabix
-                starting_y TYPE syst_tabix
-                ending_x   TYPE syst_tabix OPTIONAL
-                ending_y   TYPE syst_tabix OPTIONAL.
-
-    METHODS set_columns_details.
-    METHODS set_columns.
-    METHODS set_editable_column.
-    METHODS set_events.
-
-    METHODS set_functioncode
-      IMPORTING functioncode TYPE syst_ucomm.
-
-    METHODS set_functions.
-    METHODS set_layout.
-
-    METHODS set_pfstatus
-      IMPORTING pfstatus TYPE pfstatus.
-
-    METHODS set_selection.
-
-    METHODS set_title
-      IMPORTING !title TYPE gui_title.
-
-    METHODS start_report.
-
-    METHODS timestampl_to_datetime
-      IMPORTING ts           TYPE timestampl
-      RETURNING VALUE(value) TYPE char19.
-
-    METHODS unregister.
-
-    METHODS update_content
-      IMPORTING !refresh TYPE abap_bool  DEFAULT abap_false
-                sel_row  TYPE syst_curow OPTIONAL
-      RAISING   cx_trpa_no_value_selected.
-
-    METHODS update_document_db
-      CHANGING document TYPE  zstfi_trading_reclass.
-
-    METHODS upload_csv_file
-      EXPORTING !result TYPE ANY TABLE
-      RAISING   cx_cts_eps_io_exception.
-
-    METHODS user_confirm_action
-      IMPORTING !titlebar     TYPE any DEFAULT space
-                text_question TYPE any
-      RETURNING VALUE(result) TYPE boole_d.
-
-    METHODS read_save_interco_doc_to_moni
-      IMPORTING !line         TYPE zstfi_trading_reclass_file
-      RETURNING VALUE(result) TYPE zstfi_trading_reclass_key.
+    "! @parameter document | <p class="shorttext synchronized" lang="es"></p>
+  methods CREATE_SETTLEMENT_ACC_DOCUMENT
+    changing
+      !DOCUMENT type ref to ZSTFI_TRADING_RECLASS .
+  methods DATAINPUT2CONVEXT
+    changing
+      !INPUT_TABLE type ANY TABLE .
+  methods DELETE_VARIANT .
+  methods DISPLAY_LOGFILE
+    raising
+      CX_ADT_RES_SEG_PARAM_NOT_FOUND .
+  methods DISPLAY_MSG_EXCEPTON
+    importing
+      !EXCEPTION type ref to CX_ROOT .
+  methods DOWNLOAD_FILE
+    importing
+      !FILENAME type STRING
+      !DIRECTORY type STRING optional
+      !FILE_CONTENT type ref to DATA
+    raising
+      CX_CTS_EPS_IO_EXCEPTION .
+  methods DOWNLOAD_TEMPLATE .
+  methods EXCEPTION_TO_BAPIRET2
+    importing
+      !EXCEPTION type ref to CX_ROOT
+    returning
+      value(RESULT) type BAPIRETTAB .
+  methods EXTRACT_DOCUMENTS_FROM_FILE
+    raising
+      CX_IOS_DOCUMENT .
+  methods GET_CURRENT_SCREEN_FIELDS
+    returning
+      value(RESULT) type RSPARAMS_TT .
+  methods GET_TIMESTAMP
+    returning
+      value(RESULT) type TIMESTAMP .
+  methods GET_VARIANT
+    returning
+      value(RESULT) type RSVAR-VARIANT
+    raising
+      CX_CI_INVALID_VARIANT .
+  methods HAS_COMPLETED_DOCUMENTS
+    returning
+      value(RESULT) type SAP_BOOL .
+  methods HAS_MANDATORY_FIELDS
+    importing
+      !LINE type ZSTFI_TRADING_RECLASS_FILE
+    returning
+      value(HAS_MANDATORY_FIELDS) type ABAP_BOOL .
+  methods INIT_CONTROL .
+  methods IS_FILE_FIELDS_VALID
+    importing
+      !LINE type ZSTFI_TRADING_RECLASS_FILE
+    returning
+      value(VALUE) type ABAP_BOOL .
+  methods IS_SELECTED_ROWS
+    importing
+      !MAX_ONE type ABAP_BOOL optional
+    returning
+      value(VALUE) type ABAP_BOOL .
+  methods IS_UNPROCESSED_DOCUMENTS
+    returning
+      value(RESULT) type SAP_BOOL .
+  methods IS_VARIANT_EXISTS
+    returning
+      value(RESULT) type ABAP_BOOL .
+  methods LOAD_VARIANT .
+  methods ON_LINK_CLICK
+    for event LINK_CLICK of CL_SALV_EVENTS_TABLE
+    importing
+      !ROW
+      !COLUMN .
+  methods ON_USER_COMMAND
+    for event ADDED_FUNCTION of CL_SALV_EVENTS
+    importing
+      !E_SALV_FUNCTION .
+  methods PROCESS_DOCUMENTS .
+  methods PROGRESS_INDICATOR
+    importing
+      !TEXT type ANY
+      !PROCESSED type SY-TABIX
+      !TOTAL type SY-TABIX .
+  methods READ_CATPRCS_TRADING_TEXT
+    importing
+      !CATPRCS type ZDE_TYPE_TRADING_PROCESS
+    returning
+      value(RESULT) type DDTEXT .
+  methods READ_COORDINATES_DYNPRO
+    importing
+      !DYNPRO type TY_CALL_SCREEN_STACK
+    returning
+      value(COORDINATES) type ZST99_SCREEN_COORDINATES .
+  methods READ_DOCCAT_TRADING_TEXT
+    importing
+      !DOCCAT type ZDE_DOCUMENT_TYPE_TRADING
+    returning
+      value(RESULT) type DDTEXT .
+  methods READ_DOMAINTEXTS .
+  methods READ_DOMVALUES
+    importing
+      !DOMAIN_NAME type DOMNAME
+    returning
+      value(RESULT) type DD07V_T .
+  methods READ_FILE_SEPARATOR
+    returning
+      value(RESULT) type CHAR1 .
+  methods READ_LOG .
+  methods READ_MESSAGE_TEXT
+    importing
+      !MESSAGE type ZST_TRADING_LOG
+    returning
+      value(RESULT) type BAPI_MSG .
+  methods READ_SAVE_INTERCO_DOC_TO_MONI
+    importing
+      !LINE type ZSTFI_TRADING_RECLASS_FILE
+    returning
+      value(RESULT) type ZSTFI_TRADING_RECLASS_KEY .
+  methods READ_SELECTED_ROWS
+    returning
+      value(VALUE) type SALV_T_ROW .
+  methods READ_SETTINGS
+    importing
+      !DOCUMENT type ZSTFI_TRADING_RECLASS
+    raising
+      ZCX_TRADING .
+  methods REGISTER .
+  methods SAVE_DOCUMENT_LOG
+    importing
+      !DOCKEY type ZTBFI_TRD_RECLAS-%KEY .
+  methods SAVE_INVOICE_REMARK
+    importing
+      !DOCUMENT type ref to ZSTSD_TRADING_EXT .
+  methods SAVE_VARIANT .
+  methods SCREENFIELDS_TO_STRUCTAB
+    importing
+      !STRUCTABNAME type SEOCPDNAME
+    returning
+      value(STRUCTAB) type ref to DATA .
+  methods SEARCH_DOCUMENTS .
+  methods SEARCH_DOCUMENTS_BY_KEYS
+    importing
+      !KEYS type TT_TRADING_RECLASS_KEY .
+  methods SEND_POPUP
+    importing
+      !SCREEN type SYST_DYNNR
+      !STARTING_X type SYST_TABIX
+      !STARTING_Y type SYST_TABIX
+      !ENDING_X type SYST_TABIX optional
+      !ENDING_Y type SYST_TABIX optional .
+  methods SET_COLUMNS .
+  methods SET_EDITABLE_COLUMN .
+  methods SET_EVENTS .
+  methods SET_FUNCTIONCODE
+    importing
+      !FUNCTIONCODE type SYST_UCOMM .
+  methods SET_FUNCTIONS .
+  methods SET_LAYOUT .
+  methods SET_PFSTATUS
+    importing
+      !PFSTATUS type PFSTATUS .
+  methods SET_SELECTION .
+  methods SET_TITLE
+    importing
+      !TITLE type GUI_TITLE .
+  methods START_REPORT .
+  methods TIMESTAMPL_TO_DATETIME
+    importing
+      !TS type TIMESTAMPL
+    returning
+      value(VALUE) type CHAR19 .
+  methods UNREGISTER .
+  methods UPDATE_CONTENT
+    importing
+      !REFRESH type ABAP_BOOL default ABAP_FALSE
+      !SEL_ROW type SYST_CUROW optional
+    raising
+      CX_TRPA_NO_VALUE_SELECTED .
+  methods UPDATE_DOCUMENT_DB
+    changing
+      !DOCUMENT type ZSTFI_TRADING_RECLASS .
+  methods UPLOAD_CSV_FILE
+    exporting
+      !RESULT type ANY TABLE
+    raising
+      CX_CTS_EPS_IO_EXCEPTION .
+  methods USER_CONFIRM_ACTION
+    importing
+      !TITLEBAR type ANY default SPACE
+      !TEXT_QUESTION type ANY
+    returning
+      value(RESULT) type BOOLE_D .
 ENDCLASS.
 
 
-CLASS zcl_fi_trading_reclass IMPLEMENTATION.
+
+CLASS ZCL_FI_TRADING_RECLASS IMPLEMENTATION.
+
+
   METHOD add_message_file.
     INSERT VALUE #( %key     = key
                     msgty    = sy-msgty
@@ -412,6 +426,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                     detlevel = detail_level )
            INTO TABLE logfile.
   ENDMETHOD.
+
 
   METHOD add_message_struc_doc.
     process_log = VALUE #( BASE process_log
@@ -428,6 +443,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                              msgv4         = message-message_v4 ) ).
   ENDMETHOD.
 
+
   METHOD add_message_table_doc.
     LOOP AT messages REFERENCE INTO DATA(message).
       add_message_struc_doc( message          = message->*
@@ -435,12 +451,14 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD add_message_table_doc_conv.
     LOOP AT messages REFERENCE INTO DATA(message).
       add_message_struc_doc( message          = CORRESPONDING #( message->* )
                              documentcategory = documentcategory ).
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD add_system_message_doc.
     DATA(sys_message) = VALUE bapiret2( type       = sy-msgty
@@ -455,17 +473,6 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                            documentcategory = documentcategory ).
   ENDMETHOD.
 
-  METHOD build_extension_in.
-    DATA(extension_data) = VALUE bape_vbak( zcontenedor    = document->container
-                                            zpto_conexion3 = document->destination_port
-                                            zpuerto_emb    = document->loading_dock
-                                            zconsignatario = document->consignee
-                                            zfecha_emb     = document->shipment_date
-                                            zetd           = document->eta
-                                            zetd_real      = document->real_eta ).
-
-    INSERT extension_helper->fill_container( extension_data ) INTO TABLE result.
-  ENDMETHOD.
 
   METHOD build_sample_template.
     result = NEW #( ).
@@ -475,7 +482,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       VALUE zttfi_trading_reclass_file( companycode             = 'HFEX'
                                         documentreferenceid     = 'FX-100300'
                                         postingdate             = sy-datum
-                                        transactionquantityunit = 'ST'
+                                        transactionquantityunit = 'CJ'
                                         transactioncurrency     = 'EUR'
                                         ( quantityintransaction       = 4000
                                           amountintransactioncurrency = 79000 )
@@ -503,6 +510,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     INSERT INITIAL LINE INTO <result> INDEX 1 ASSIGNING FIELD-SYMBOL(<headerline>).
     CONCATENATE LINES OF template_header INTO <headerline> SEPARATED BY ';'.
   ENDMETHOD.
+
 
   METHOD cancel_documents.
     IF read_selected_rows( ) IS INITIAL.
@@ -532,6 +540,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     MESSAGE s073.
   ENDMETHOD.
 
+
   METHOD center_window.
     CALL FUNCTION 'CY_CENTER_WINDOW'
       EXPORTING dynpro_height = dynpro_height
@@ -542,14 +551,17 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                 winy2         = coordinates-ending_y.
   ENDMETHOD.
 
+
   METHOD close.
     LEAVE TO SCREEN 0.
   ENDMETHOD.
+
 
   METHOD commit_work_and_wait.
     CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
       EXPORTING wait = abap_true.
   ENDMETHOD.
+
 
   METHOD complete_records.
     DO.
@@ -568,6 +580,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDDO.
   ENDMETHOD.
 
+
   METHOD constructor.
     offline = xsdbool( batchmode = abap_true OR is_offline( ) ).
     extension_helper = NEW #( ).
@@ -579,6 +592,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                         ( status = status_trading_prcs-cancelallation_error icon = icon_led_red )
                                         ( status = status_trading_prcs-error icon = icon_led_red ) ).
   ENDMETHOD.
+
 
   METHOD convert_csv_to_sap.
     CALL FUNCTION 'TEXT_CONVERT_CSV_TO_SAP'
@@ -593,6 +607,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
 
     datainput2convext( CHANGING input_table = data_converted ).
   ENDMETHOD.
+
 
   METHOD convert_currency.
     DATA foreign_amount TYPE wrbtr.
@@ -609,6 +624,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                         amt_internal = foreign_amount ).
   ENDMETHOD.
 
+
   METHOD conv_currency_to_external.
     CALL FUNCTION 'BAPI_CURRENCY_CONV_TO_EXTERN_9'
       EXPORTING currency        = currency
@@ -616,9 +632,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       IMPORTING amount_external = result.
   ENDMETHOD.
 
+
   METHOD create_documents.
     create_settlement_acc_document( CHANGING document = document ).
   ENDMETHOD.
+
 
   METHOD datainput2convext.
     LOOP AT input_table ASSIGNING FIELD-SYMBOL(<data_converted>).
@@ -643,12 +661,14 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD default_view.
     def_view = VALUE #( dynpro   = dynpro
                         prog     = prog
                         pfstatus = pfstatus
                         title    = title ).
   ENDMETHOD.
+
 
   METHOD delete_variant.
     TRY.
@@ -687,6 +707,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDCASE.
   ENDMETHOD.
 
+
   METHOD display_logfile.
     DATA(log_appl) = NEW zcl_application_log( ).
 
@@ -721,6 +742,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     CLEAR logfile.
   ENDMETHOD.
 
+
   METHOD display_msg_excepton.
     CALL FUNCTION 'RS_EXCEPTION_TO_SYMSG'
       EXPORTING i_r_exception = exception
@@ -730,6 +752,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
             WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4
             DISPLAY LIKE 'E'.
   ENDMETHOD.
+
 
   METHOD download_file.
     DATA directory_path TYPE string.
@@ -787,6 +810,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD download_template.
     TRY.
         DATA(filename) = |{ TEXT-f01 && get_timestamp( ) }.CSV|.
@@ -798,6 +822,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
         display_msg_excepton( io_excp ).
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD extract_documents_from_file.
     DATA documents TYPE zttfi_trading_reclass_file.
@@ -823,6 +848,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
         RAISE EXCEPTION NEW cx_ios_document( previous = io_excp ).
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD file_open_dialog.
     DATA rc        TYPE i.
@@ -861,6 +887,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD get_current_screen_fields.
     DATA screen_values         TYPE STANDARD TABLE OF rsparams.
     DATA current_screen_fields TYPE TABLE OF rsscr.
@@ -890,6 +917,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD get_instance.
     IF mo_instance IS NOT BOUND.
       mo_instance = NEW #( batchmode ).
@@ -897,9 +925,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     instance = mo_instance.
   ENDMETHOD.
 
+
   METHOD get_timestamp.
     GET TIME STAMP FIELD result.
   ENDMETHOD.
+
 
   METHOD get_variant.
     DATA cancelled TYPE xflag.
@@ -927,6 +957,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       RAISE EXCEPTION NEW cx_ci_invalid_variant( ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD handle_event.
     event_code = event.
@@ -972,6 +1003,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     cl_gui_cfw=>dispatch( ).
   ENDMETHOD.
 
+
   METHOD has_completed_documents.
     DATA(completed_documents) = REDUCE i( INIT i = 0
                                           FOR x IN read_selected_rows( )
@@ -982,6 +1014,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
 
     result = xsdbool( completed_documents > 0 ).
   ENDMETHOD.
+
 
   METHOD has_mandatory_fields.
     DATA(components) = CAST cl_abap_structdescr( cl_abap_typedescr=>describe_by_data( line ) )->components.
@@ -1027,6 +1060,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     has_mandatory_fields = xsdbool( no_mandatory_field IS INITIAL ).
   ENDMETHOD.
 
+
   METHOD init_control.
     CHECK me->offline = abap_false.
 
@@ -1038,6 +1072,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       start_report( ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD is_file_fields_valid.
     IF NOT has_mandatory_fields( line ).
@@ -1079,9 +1114,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                      AND currency_exist    = abap_true ).
   ENDMETHOD.
 
+
   METHOD is_offline.
     value = cl_salv_table=>is_offline( ).
   ENDMETHOD.
+
 
   METHOD is_selected_rows.
     mo_salv_table->get_metadata( ).
@@ -1089,6 +1126,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                     THEN xsdbool( lines( mo_salv_table->get_selections( )->get_selected_rows( ) ) = 1 )
                     ELSE xsdbool( mo_salv_table->get_selections( )->get_selected_rows( ) ) ).
   ENDMETHOD.
+
 
   METHOD is_unprocessed_documents.
     DATA(unprocessed_documents) = REDUCE i( INIT i = 0
@@ -1102,6 +1140,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     result = xsdbool( unprocessed_documents > 0 ).
   ENDMETHOD.
 
+
   METHOD is_variant_exists.
     DATA(dnum) = COND #( WHEN view_info-subscreen IS NOT INITIAL
                          THEN view_info-subscreen
@@ -1112,6 +1151,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                 dynnr          = dnum
       IMPORTING variant_exists = result.
   ENDMETHOD.
+
 
   METHOD load_variant.
     DATA sscr TYPE STANDARD TABLE OF rsscr.
@@ -1139,6 +1179,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
               WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD on_link_click.
     DATA(content) = REF #( contents[ row ] ).
@@ -1169,6 +1210,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDCASE.
   ENDMETHOD.
 
+
   METHOD on_user_command.
     event_code = e_salv_function.
     CASE e_salv_function.
@@ -1191,6 +1233,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
         read_log( ).
     ENDCASE.
   ENDMETHOD.
+
 
   METHOD process_documents.
     DATA(selected_rows) = read_selected_rows( ).
@@ -1228,6 +1271,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
+
   METHOD progress_indicator.
     cl_progress_indicator=>progress_indicate( i_text               = text
                                               i_processed          = processed
@@ -1235,9 +1279,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                               i_output_immediately = abap_true ).
   ENDMETHOD.
 
+
   METHOD read_catprcs_trading_text.
     result = VALUE #( catprcs_trading_texts[ domvalue_l = catprcs ]-ddtext OPTIONAL ).
   ENDMETHOD.
+
 
   METHOD read_coordinates_dynpro.
     IF dynpro-is_popup = abap_false.
@@ -1255,15 +1301,18 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                  dynpro_width  = CONV i( dynpro_size-bzbr ) ).
   ENDMETHOD.
 
+
   METHOD read_doccat_trading_text.
     result = VALUE #( doccat_trading_texts[ domvalue_l = doccat ]-ddtext OPTIONAL ).
   ENDMETHOD.
+
 
   METHOD read_domaintexts.
     doccat_texts = read_domvalues( 'VBTYP' ).
     catprcs_trading_texts = read_domvalues( 'ZDD_TYPE_TRADING_PROCESS' ).
     doccat_trading_texts = read_domvalues( 'ZDD_DOCUMENT_TYPE_TRADING' ).
   ENDMETHOD.
+
 
   METHOD read_domvalues.
     CALL FUNCTION 'DD_DOMVALUES_GET'
@@ -1272,6 +1321,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       TABLES     dd07v_tab = result
       EXCEPTIONS OTHERS    = 0.
   ENDMETHOD.
+
 
   METHOD read_file_separator.
     CASE sy-batch.
@@ -1287,6 +1337,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
                                                       EXCEPTIONS OTHERS         = 0 ).
     ENDCASE.
   ENDMETHOD.
+
 
   METHOD read_log.
     IF is_selected_rows( ) = abap_false.
@@ -1358,16 +1409,19 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     log_appl->display_detlevel( modal = abap_true ).
   ENDMETHOD.
 
+
   METHOD read_message_text.
     MESSAGE ID message-msgid TYPE message-msgty NUMBER message-msgno
             WITH message-msgv1 message-msgv2 message-msgv3 message-msgv4
             INTO result.
   ENDMETHOD.
 
+
   METHOD read_selected_rows.
     mo_salv_table->get_metadata( ).
     value = mo_salv_table->get_selections( )->get_selected_rows( ).
   ENDMETHOD.
+
 
   METHOD read_settings.
     CLEAR document_settings.
@@ -1382,9 +1436,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD read_view.
     result = view_info.
   ENDMETHOD.
+
 
   METHOD register.
     DATA(dynpro) =
@@ -1409,6 +1465,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       INSERT view_info INTO TABLE call_view_stack.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD save_document_log.
     DATA datetime    TYPE timestampl.
@@ -1445,6 +1502,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     CLEAR process_log.
   ENDMETHOD.
 
+
   METHOD save_invoice_remark.
     IF document->invoice_remark IS INITIAL.
       RETURN.
@@ -1464,6 +1522,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       TABLES     lines           = order_header_text_lines
       EXCEPTIONS OTHERS          = 0.
   ENDMETHOD.
+
 
   METHOD save_variant.
     DATA variant TYPE massvar.
@@ -1549,6 +1608,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD screenfields_to_structab.
     DATA new_line TYPE REF TO data.
     FIELD-SYMBOLS <table> TYPE STANDARD TABLE.
@@ -1579,6 +1639,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       ENDCASE.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD search_documents.
     DATA documents TYPE zttfi_trading_reclass.
@@ -1619,6 +1680,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD search_documents_by_keys.
     DATA documents      TYPE zttfi_trading_reclass.
     DATA documents_uuid TYPE RANGE OF ztbfi_trd_reclas-DocumentUUID.
@@ -1646,6 +1708,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD send.
     register( ).
 
@@ -1663,6 +1726,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     unregister( ).
   ENDMETHOD.
 
+
   METHOD send_popup.
     PERFORM call_popup IN PROGRAM (view_info-prog)
       USING screen
@@ -1671,6 +1735,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
             ending_x
             ending_y.
   ENDMETHOD.
+
 
   METHOD set_columns.
     DATA o_columns TYPE REF TO cl_salv_columns_table.
@@ -1743,41 +1808,6 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
-  METHOD set_columns_details.
-    DATA o_columns TYPE REF TO cl_salv_columns_table.
-    DATA o_column  TYPE REF TO cl_salv_column_table.
-
-    TRY.
-        o_columns = mo_salv_table_popup->get_columns( ).
-
-        o_column ?= o_columns->get_column( 'MANDT' ).
-        o_column->set_visible( if_salv_c_bool_sap=>false ).
-        o_column ?= o_columns->get_column( 'GROWER' ).
-        o_column->set_visible( if_salv_c_bool_sap=>false ).
-        o_column ?= o_columns->get_column( 'EXTDOCUMENT' ).
-        o_column->set_visible( if_salv_c_bool_sap=>false ).
-        o_column ?= o_columns->get_column( 'SEQNR' ).
-        o_column->set_visible( if_salv_c_bool_sap=>false ).
-
-        " Custom texts
-        o_column ?= o_columns->get_column( 'UNIT_GROSS_WEIGHT' ).
-        o_column->set_short_text( CONV scrtext_s( TEXT-f02 )  ).
-        o_column->set_medium_text( CONV scrtext_m( TEXT-f03 ) ).
-        o_column->set_long_text( CONV scrtext_l( TEXT-f04 ) ).
-        o_column->set_tooltip( CONV scrtext_l( TEXT-f04 ) ).
-
-        o_column ?= o_columns->get_column( 'UNIT_NET_WEIGHT' ).
-        o_column->set_short_text( CONV scrtext_s( TEXT-f05 )  ).
-        o_column->set_medium_text( CONV scrtext_m( TEXT-f06 ) ).
-        o_column->set_long_text( CONV scrtext_l( TEXT-f07 ) ).
-        o_column->set_tooltip( CONV scrtext_l( TEXT-f07 ) ).
-
-        o_columns->set_optimize( if_salv_c_bool_sap=>true ).
-      CATCH cx_salv_msg
-            cx_salv_not_found
-            cx_salv_data_error ##NO_HANDLER.
-    ENDTRY.
-  ENDMETHOD.
 
   METHOD set_editable_column.
 *    TRY.
@@ -1792,16 +1822,19 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
 *    mo_salv_table->refresh( refresh_mode = if_salv_c_refresh=>full ).
   ENDMETHOD.
 
+
   METHOD set_events.
     DATA(o_events) = mo_salv_table->get_event( ).
     SET HANDLER me->on_link_click   FOR o_events.
     SET HANDLER me->on_user_command FOR o_events.
   ENDMETHOD.
 
+
   METHOD set_file_parameters.
     me->ul_filename = ul_filename.
     me->with_header = with_header.
   ENDMETHOD.
+
 
   METHOD set_functioncode.
     DATA(fc) = CONV syst_ucomm( |={ functioncode }| ).
@@ -1810,6 +1843,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       EXPORTING  functioncode = fc
       EXCEPTIONS OTHERS       = 0.
   ENDMETHOD.
+
 
   METHOD set_functions.
     DATA o_functions TYPE REF TO cl_salv_functions_list.
@@ -1860,6 +1894,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
+
   METHOD set_layout.
     DATA(key) = VALUE salv_s_layout_key( report = sy-repid ).
     DATA(layout) = mo_salv_table->get_layout( ).
@@ -1871,6 +1906,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     mo_salv_table->get_display_settings( )->set_striped_pattern( abap_true ).
   ENDMETHOD.
 
+
   METHOD set_pfstatus.
     DATA excl TYPE syucomm_t.
 
@@ -1881,13 +1917,16 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     SET PF-STATUS pfstatus EXCLUDING excl OF PROGRAM view_info-prog.
   ENDMETHOD.
 
+
   METHOD set_selection.
     mo_salv_table->get_selections( )->set_selection_mode( if_salv_c_selection_mode=>row_column ).
   ENDMETHOD.
 
+
   METHOD set_title.
     SET TITLEBAR title OF PROGRAM view_info-prog.
   ENDMETHOD.
+
 
   METHOD start_report.
     TRY.
@@ -1907,9 +1946,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     set_editable_column( ).
   ENDMETHOD.
 
+
   METHOD timestampl_to_datetime.
     value = |{ ts TIMESTAMP = ENVIRONMENT TIMEZONE = sy-zonlo } |.
   ENDMETHOD.
+
 
   METHOD unregister.
     DATA last TYPE i.
@@ -1924,6 +1965,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       ENDCASE.
     ENDDO.
   ENDMETHOD.
+
 
   METHOD update_content.
     DATA(selected_rows) = COND salv_t_row( LET message = VALUE scx_t100key( msgid = 'VB'
@@ -1958,6 +2000,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD update_document_db.
     DATA(is_completely_created) = xsdbool( document-%settlementdockey IS NOT INITIAL ).
 
@@ -1975,6 +2018,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     save_document_log( document-%key ).
     commit_work_and_wait( ).
   ENDMETHOD.
+
 
   METHOD upload_csv_file.
     DATA csv_data TYPE truxs_t_text_data.
@@ -1996,6 +2040,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
+
   METHOD user_confirm_action.
     DATA answer TYPE char1.
 
@@ -2008,6 +2053,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
 
     result = xsdbool( answer = 1 ).
   ENDMETHOD.
+
 
   METHOD read_save_interco_doc_to_moni.
     DATA reclassification TYPE STANDARD TABLE OF ztbfi_trd_reclas WITH EMPTY KEY.
@@ -2056,6 +2102,7 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
 
     result = reclassification[ 1 ]-%key.
   ENDMETHOD.
+
 
   METHOD create_settlement_acc_document.
     CHECK document->accountingdocumentsettlement IS INITIAL.
@@ -2107,11 +2154,11 @@ CLASS zcl_fi_trading_reclass IMPLEMENTATION.
       CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
     ELSE.
       document->%settlementdockey = obj_key.
-*      commit_work_and_wait( ).
     ENDIF.
 
     update_document_db( CHANGING document = document->* ).
   ENDMETHOD.
+
 
   METHOD exception_to_bapiret2.
     CALL FUNCTION 'RS_EXCEPTION_TO_BAPIRET2'

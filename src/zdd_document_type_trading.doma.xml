@@ -221,6 +221,7 @@
      <VALPOS>0008</VALPOS>
      <DDLANGUAGE>E</DDLANGUAGE>
      <DOMVALUE_L>2</DOMVALUE_L>
+     <DDTEXT>Settlement Invoice</DDTEXT>
     </item>
     <item>
      <VALPOS>0008</VALPOS>
@@ -231,12 +232,13 @@
      <VALPOS>0008</VALPOS>
      <DDLANGUAGE>P</DDLANGUAGE>
      <DOMVALUE_L>2</DOMVALUE_L>
+     <DDTEXT>Fatura de liquidação</DDTEXT>
     </item>
     <item>
      <VALPOS>0009</VALPOS>
      <DDLANGUAGE>E</DDLANGUAGE>
      <DOMVALUE_L>-</DOMVALUE_L>
-     <DDTEXT>Source Sales Document</DDTEXT>
+     <DDTEXT>Origin Sales Document</DDTEXT>
     </item>
     <item>
      <VALPOS>0009</VALPOS>

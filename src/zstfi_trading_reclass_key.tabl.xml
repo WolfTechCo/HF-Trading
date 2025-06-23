@@ -25,7 +25,7 @@
    <DD02_TEXTS>
     <item>
      <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Trading Invoices Key - External Growers</DDTEXT>
+     <DDTEXT>Trading Invoices Key - Reclassification</DDTEXT>
     </item>
     <item>
      <DDLANGUAGE>F</DDLANGUAGE>
@@ -33,7 +33,7 @@
     </item>
     <item>
      <DDLANGUAGE>P</DDLANGUAGE>
-     <DDTEXT>Chave de faturas trading - Produtores externos</DDTEXT>
+     <DDTEXT>Chave de faturas trading - Reclassificação</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

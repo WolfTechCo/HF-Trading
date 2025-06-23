@@ -22,42 +22,6 @@
     </item>
     <item>
      <ID>I</ID>
-     <KEY>F02</KEY>
-     <ENTRY>BrutoUnit</ENTRY>
-     <LENGTH>19</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>F03</KEY>
-     <ENTRY>Peso Bruto Unit</ENTRY>
-     <LENGTH>25</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>F04</KEY>
-     <ENTRY>Peso Bruto Unitario</ENTRY>
-     <LENGTH>29</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>F05</KEY>
-     <ENTRY>NetoUnit</ENTRY>
-     <LENGTH>19</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>F06</KEY>
-     <ENTRY>Peso Neto Unit</ENTRY>
-     <LENGTH>25</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>F07</KEY>
-     <ENTRY>Peso Neto Unitario</ENTRY>
-     <LENGTH>29</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
      <KEY>H01</KEY>
      <ENTRY>Sociedad Origen</ENTRY>
      <LENGTH>19</LENGTH>
@@ -73,12 +37,6 @@
      <KEY>H03</KEY>
      <ENTRY>Fecha Liquidación</ENTRY>
      <LENGTH>18</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>H04</KEY>
-     <ENTRY>Contenedor</ENTRY>
-     <LENGTH>22</LENGTH>
     </item>
     <item>
      <ID>I</ID>
@@ -103,12 +61,6 @@
      <KEY>H08</KEY>
      <ENTRY>Moneda</ENTRY>
      <LENGTH>16</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>H09</KEY>
-     <ENTRY>Temporada</ENTRY>
-     <LENGTH>18</LENGTH>
     </item>
     <item>
      <ID>I</ID>
@@ -221,49 +173,13 @@
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>F</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
        <KEY>F01</KEY>
        <ENTRY>TemplateLoadTemplateProducersExt_</ENTRY>
        <LENGTH>58</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F02</KEY>
-       <ENTRY>GrossUnit</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F03</KEY>
-       <ENTRY>GrossUnitWeight</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F04</KEY>
-       <ENTRY>Gross unit weight</ENTRY>
-       <LENGTH>29</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F05</KEY>
-       <ENTRY>NetUnit</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F06</KEY>
-       <ENTRY>NetUnitWeight</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F07</KEY>
-       <ENTRY>Net Unit Weight</ENTRY>
-       <LENGTH>29</LENGTH>
       </item>
       <item>
        <ID>I</ID>
@@ -282,12 +198,6 @@
        <KEY>H03</KEY>
        <ENTRY>Item</ENTRY>
        <LENGTH>18</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>H04</KEY>
-       <ENTRY>InvoiceDate</ENTRY>
-       <LENGTH>22</LENGTH>
       </item>
       <item>
        <ID>I</ID>
@@ -312,12 +222,6 @@
        <KEY>H08</KEY>
        <ENTRY>Currency</ENTRY>
        <LENGTH>16</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>H09</KEY>
-       <ENTRY>Material</ENTRY>
-       <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
@@ -418,7 +322,7 @@
      </TEXTPOOL>
     </item>
     <item>
-     <LANGUAGE>F</LANGUAGE>
+     <LANGUAGE>E</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
@@ -428,93 +332,45 @@
       </item>
       <item>
        <ID>I</ID>
-       <KEY>F02</KEY>
-       <ENTRY>GrossUnit</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F03</KEY>
-       <ENTRY>GrossUnitWeight</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F04</KEY>
-       <ENTRY>Gross unit weight</ENTRY>
-       <LENGTH>29</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F05</KEY>
-       <ENTRY>NetUnit</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F06</KEY>
-       <ENTRY>NetUnitWeight</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F07</KEY>
-       <ENTRY>Net Unit Weight</ENTRY>
-       <LENGTH>29</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
        <KEY>H01</KEY>
-       <ENTRY>Grower</ENTRY>
+       <ENTRY>Origin Company</ENTRY>
        <LENGTH>19</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H02</KEY>
-       <ENTRY>Invoice</ENTRY>
+       <ENTRY>Origin Ext.Number</ENTRY>
        <LENGTH>17</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H03</KEY>
-       <ENTRY>Item</ENTRY>
+       <ENTRY>Settlement Date</ENTRY>
        <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
-       <KEY>H04</KEY>
-       <ENTRY>InvoiceDate</ENTRY>
-       <LENGTH>22</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
        <KEY>H05</KEY>
-       <ENTRY>Sold-To-Party</ENTRY>
+       <ENTRY>Quantity</ENTRY>
        <LENGTH>21</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H06</KEY>
-       <ENTRY>CompanyCode</ENTRY>
+       <ENTRY>Quantity Unit</ENTRY>
        <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H07</KEY>
-       <ENTRY>Amount</ENTRY>
-       <LENGTH>15</LENGTH>
+       <ENTRY>Settlement Amount</ENTRY>
+       <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H08</KEY>
        <ENTRY>Currency</ENTRY>
        <LENGTH>16</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>H09</KEY>
-       <ENTRY>Material</ENTRY>
-       <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
@@ -566,6 +422,18 @@
       </item>
       <item>
        <ID>I</ID>
+       <KEY>Q07</KEY>
+       <ENTRY>Cancel Documents</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q08</KEY>
+       <ENTRY>The selected unprocessed documents will be cancelled. Do you wish to continue?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
        <KEY>T01</KEY>
        <ENTRY>Log´s</ENTRY>
        <LENGTH>18</LENGTH>
@@ -609,8 +477,8 @@
       <item>
        <ID>I</ID>
        <KEY>T08</KEY>
-       <ENTRY>Details</ENTRY>
-       <LENGTH>17</LENGTH>
+       <ENTRY>Delete</ENTRY>
+       <LENGTH>20</LENGTH>
       </item>
      </TEXTPOOL>
     </item>
@@ -625,93 +493,45 @@
       </item>
       <item>
        <ID>I</ID>
-       <KEY>F02</KEY>
-       <ENTRY>UnidadeBR</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F03</KEY>
-       <ENTRY>PesoBRdaUnidade</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F04</KEY>
-       <ENTRY>Peso BR da unidade</ENTRY>
-       <LENGTH>29</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F05</KEY>
-       <ENTRY>UnidLíq</ENTRY>
-       <LENGTH>19</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F06</KEY>
-       <ENTRY>PesoLíqDaUnid</ENTRY>
-       <LENGTH>25</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>F07</KEY>
-       <ENTRY>PesoLíquDaUnid</ENTRY>
-       <LENGTH>29</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
        <KEY>H01</KEY>
-       <ENTRY>Produtor</ENTRY>
+       <ENTRY>Origem da empresa</ENTRY>
        <LENGTH>19</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H02</KEY>
-       <ENTRY>Fatura</ENTRY>
+       <ENTRY>Origem do fólio</ENTRY>
        <LENGTH>17</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H03</KEY>
-       <ENTRY>Item</ENTRY>
+       <ENTRY>Data de liquidação</ENTRY>
        <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
-       <KEY>H04</KEY>
-       <ENTRY>DatadaFatura</ENTRY>
-       <LENGTH>22</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
        <KEY>H05</KEY>
-       <ENTRY>Solicitante</ENTRY>
+       <ENTRY>Quantidade</ENTRY>
        <LENGTH>21</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H06</KEY>
-       <ENTRY>Empresa</ENTRY>
+       <ENTRY>Unidade de quantid</ENTRY>
        <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H07</KEY>
-       <ENTRY>Valor</ENTRY>
-       <LENGTH>15</LENGTH>
+       <ENTRY>Valor de liquidaçã</ENTRY>
+       <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>H08</KEY>
        <ENTRY>Moeda</ENTRY>
        <LENGTH>16</LENGTH>
-      </item>
-      <item>
-       <ID>I</ID>
-       <KEY>H09</KEY>
-       <ENTRY>Material</ENTRY>
-       <LENGTH>18</LENGTH>
       </item>
       <item>
        <ID>I</ID>
@@ -746,7 +566,7 @@
       <item>
        <ID>I</ID>
        <KEY>Q04</KEY>
-       <ENTRY>A variante já existe, Overwrite?</ENTRY>
+       <ENTRY>A variante já existe, atualizar?</ENTRY>
        <LENGTH>68</LENGTH>
       </item>
       <item>
@@ -759,6 +579,18 @@
        <ID>I</ID>
        <KEY>Q06</KEY>
        <ENTRY>Os documentos selecionados serão cancelados/reiniciados. Deseja continuar?</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q07</KEY>
+       <ENTRY>Cancelar documentos</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>Q08</KEY>
+       <ENTRY>Os documentos não processados selecionados serão cancelados. Deseja continuar?</ENTRY>
        <LENGTH>132</LENGTH>
       </item>
       <item>
@@ -806,8 +638,8 @@
       <item>
        <ID>I</ID>
        <KEY>T08</KEY>
-       <ENTRY>Detalhes</ENTRY>
-       <LENGTH>17</LENGTH>
+       <ENTRY>Eliminar</ENTRY>
+       <LENGTH>20</LENGTH>
       </item>
      </TEXTPOOL>
     </item>
@@ -909,6 +741,11 @@
      <DESCRIPT>Crear documentos trading</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>CREATE_SETTLEMENT_ACC_DOCUMENT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crea documento contable de liquidación</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>DATAINPUT2CONVEXT</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Salida de conversión a datos de entrada</DESCRIPT>
@@ -949,6 +786,11 @@
      <DESCRIPT>Descripción tipo documento trading</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>DOCUMENT_CATEGORY_TRADING</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Categoria documentos trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>DOCUMENT_SETTINGS</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Configuración documentos</DESCRIPT>
@@ -964,9 +806,24 @@
      <DESCRIPT>Descargar plantilla de archivo de carga</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>DUMMY_MESSAGE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Dummy message</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>EVENT_CODE</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Función ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXCEPTION_TO_BAPIRET2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Excepción a tabla tipo BAPIRET2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXTENSION_HELPER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Extension helper for customer fields</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>EXTRACT_DOCUMENTS_FROM_FILE</CMPNAME>
@@ -1054,6 +911,26 @@
      <DESCRIPT>Tp.Tabla Log Archivo Monitor Trading - Reclasificación</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>MO_INSTANCE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Trading external growers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_SALV_TABLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SALV Table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_SALV_TABLE_POPUP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SALV Table PopUp</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OFFLINE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Suministro de interfaz offline</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>ON_LINK_CLICK</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Control de click (ALV)</DESCRIPT>
@@ -1139,6 +1016,11 @@
      <DESCRIPT>Obtener información de la vista actual</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>REGISTER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Registro de control de dynpro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>SAVE_DOCUMENT_LOG</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Guarda log documento</DESCRIPT>
@@ -1182,11 +1064,6 @@
      <CMPNAME>SET_COLUMNS</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Configura campos ALV</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>SET_COLUMNS_DETAILS</CMPNAME>
-     <LANGU>S</LANGU>
-     <DESCRIPT>Configura campos ALV (Detalle)</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_EDITABLE_COLUMN</CMPNAME>
@@ -1239,6 +1116,11 @@
      <DESCRIPT>Inicia aplicación</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>STATUS_TRADING_PRCS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estado proceso trading</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>STATUS_TRADING_PRCS_ICON</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Estado proceso trading</DESCRIPT>
@@ -1247,6 +1129,21 @@
      <CMPNAME>TIMESTAMPL_TO_DATETIME</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Convierte timestamp a fecha-hora</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TS_ACC_DOC_EXT_FI</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Extensión documento financiero</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TS_DOCUMENT_SETTINGS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Configuración documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TS_SEARCH_DOCUMENTS_PARAMETERS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parámetros dynpro de búsqueda</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TT_CALL_SCREEN_STACK</CMPNAME>

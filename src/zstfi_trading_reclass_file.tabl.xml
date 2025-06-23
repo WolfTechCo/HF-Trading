@@ -91,7 +91,7 @@
    <DD02_TEXTS>
     <item>
      <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Trading Invoices Archive Structure - External Growers</DDTEXT>
+     <DDTEXT>Trading File Structure - Reclassification</DDTEXT>
     </item>
     <item>
      <DDLANGUAGE>F</DDLANGUAGE>
@@ -99,7 +99,7 @@
     </item>
     <item>
      <DDLANGUAGE>P</DDLANGUAGE>
-     <DDTEXT>Trading Invoices Archive Structure - External Producers</DDTEXT>
+     <DDTEXT>Estrutura dos arquivos de negociação - Reclassificação</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

@@ -7,7 +7,7 @@
     <DDLANGUAGE>S</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <CLIDEP>X</CLIDEP>
-    <DDTEXT>Datos Base Documento Contable Compras (Reclasificación)</DDTEXT>
+    <DDTEXT>DM Documento Contable Compras (Reclasificación)</DDTEXT>
     <MASTERLANG>S</MASTERLANG>
     <CONTFLAG>A</CONTFLAG>
     <EXCLASS>3</EXCLASS>
@@ -301,6 +301,20 @@
      <LENG>000010</LENG>
     </DD36M>
    </DD36M>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+    <LANGU>P</LANGU>
+   </I18N_LANGS>
+   <DD02_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>DM Accounting Document Purchases (Reclassification)</DDTEXT>
+    </item>
+    <item>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DDTEXT>DM Aquisições de documentos contabilísticos (reclassificação</DDTEXT>
+    </item>
+   </DD02_TEXTS>
    <TABL_EXTRAS>
     <TDDAT>
      <TABNAME>ZTBFI_TRDRECL_PO</TABNAME>

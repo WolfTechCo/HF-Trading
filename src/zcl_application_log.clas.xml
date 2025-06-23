@@ -15,9 +15,24 @@
    </VSEOCLASS>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>ADD_FREETEXT_MESSAGE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje desde un texto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>ADD_MESSAGE</CMPNAME>
      <LANGU>S</LANGU>
-     <DESCRIPT>Añade un mensaje al registro de la aplicación</DESCRIPT>
+     <DESCRIPT>Añade un mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_BAPIRET2_TABLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje desde estructura BAPIRET2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGE_BAPIRETURN_TABLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Añade mensaje desde estructura BAPIRETURN</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>ADD_MESSAGE_STRUCT</CMPNAME>
@@ -27,12 +42,12 @@
     <SEOCOMPOTX>
      <CMPNAME>ADD_MESSAGE_TABLE</CMPNAME>
      <LANGU>S</LANGU>
-     <DESCRIPT>Añade mensajes al registro desde una tabla</DESCRIPT>
+     <DESCRIPT>Añade mensajes desde una tabla</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>ADD_SYSTEM_MESSAGE</CMPNAME>
      <LANGU>S</LANGU>
-     <DESCRIPT>Añade mensaje al resgistro desde variable de sistema</DESCRIPT>
+     <DESCRIPT>Añade mensaje desde variable de sistema</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CLOSE</CMPNAME>
@@ -40,19 +55,34 @@
      <DESCRIPT>Escribe el registro de la aplicación en la base de datos</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>CONTROL_REFRESH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Actualizar/Refrescar control-container</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>DEFAULT_MSGID</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Clase de mensajes</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>DELETE_ALL_MESSAGES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Borrar mensajes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>DISPLAY</CMPNAME>
      <LANGU>S</LANGU>
-     <DESCRIPT>Muestra el registro guardado</DESCRIPT>
+     <DESCRIPT>Mostrar mensajes</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>DISPLAY_DETLEVEL</CMPNAME>
      <LANGU>S</LANGU>
-     <DESCRIPT>Muestra el registro guardado (Modo por Detalle-Nivel)</DESCRIPT>
+     <DESCRIPT>Mostrar mensajes (Modo por Detalle-Nivel) [Obsoleto]</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_ONCONTROL</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mostrar mensajes en OnControl</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>EXTNUMBER</CMPNAME>
@@ -88,6 +118,41 @@
      <CMPNAME>OPEN</CMPNAME>
      <LANGU>S</LANGU>
      <DESCRIPT>Abre un nuevo registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OUTPUT_CLEAR_AND_REFRESH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida de subpantalla: Borrar y Actualizar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OUTPUT_FREE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida de subpantalla : Fin</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OUTPUT_INIT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida de subpantalla: Inicialización</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OUTPUT_SET_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida de subpantalla: Establecer datos de salida</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_MODAL_TO_PROFILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Activa modo popup</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_PROFILE_DETLEVEL</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establecer el perfil nivel detalles</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_PROFILE_SINGLE_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Establecer el perfil simple</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>

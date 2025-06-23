@@ -7,7 +7,7 @@
     <DDLANGUAGE>S</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
     <LANGDEP>X</LANGDEP>
-    <DDTEXT>Log Archivo Monitor Trading - Reclasisificación</DDTEXT>
+    <DDTEXT>Log Archivo Monitor Trading - Reclasificación</DDTEXT>
     <EXCLASS>1</EXCLASS>
    </DD02V>
    <DD03P_TABLE>
@@ -38,7 +38,7 @@
    <DD02_TEXTS>
     <item>
      <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Log Invoices Trading Invoice Archive - External Growers</DDTEXT>
+     <DDTEXT>Log Invoices Trading Invoice Archive - Reclassification</DDTEXT>
     </item>
     <item>
      <DDLANGUAGE>F</DDLANGUAGE>
@@ -46,7 +46,7 @@
     </item>
     <item>
      <DDLANGUAGE>P</DDLANGUAGE>
-     <DDTEXT>Faturas de registro Arquivo de faturas trading - ProdutorExt</DDTEXT>
+     <DDTEXT>Faturas de registro Arquivo de faturas trading - Reclassific</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

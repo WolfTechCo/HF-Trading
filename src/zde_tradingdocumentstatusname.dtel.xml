@@ -16,6 +16,24 @@
     <DTELMASTER>S</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+    <LANGU>P</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Trading Document Status</DDTEXT>
+     <REPTEXT>Trading Document Status</REPTEXT>
+     <SCRTEXT_L>Trading Document Status</SCRTEXT_L>
+    </item>
+    <item>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DDTEXT>Documento de situação Negociação</DDTEXT>
+     <REPTEXT>Documento de situação Negociação</REPTEXT>
+     <SCRTEXT_L>Documento de situação Negociação</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

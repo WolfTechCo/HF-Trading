@@ -24,116 +24,109 @@
       <item>
        <ID>I</ID>
        <KEY>001</KEY>
-       <ENTRY>By document of origin</ENTRY>
+       <ENTRY>By document Intercompany</ENTRY>
        <LENGTH>40</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>002</KEY>
-       <ENTRY>By trading document</ENTRY>
+       <ENTRY>By journal entry</ENTRY>
        <LENGTH>42</LENGTH>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_CCODE</KEY>
+       <KEY>ACCDOC</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_CREDT</KEY>
+       <KEY>ACCDOCST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_DOCCT</KEY>
+       <KEY>BILLDOC</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_DOCST</KEY>
+       <KEY>CCODE</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_EXDOC</KEY>
+       <KEY>CCODEST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_EXTDT</KEY>
+       <KEY>CNT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_GRWER</KEY>
+       <KEY>CREATEAT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_MODDT</KEY>
+       <KEY>DOCREFID</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PINVO</KEY>
+       <KEY>FYEAR</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PINVY</KEY>
+       <KEY>FYEARST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PUDOC</KEY>
+       <KEY>MODIFAT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PUREQ</KEY>
+       <KEY>POSTDATE</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_SINVO</KEY>
+       <KEY>SEASON</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_SLDTO</KEY>
-       <ENTRY>.</ENTRY>
-       <LENGTH>9</LENGTH>
-       <SPLIT>D</SPLIT>
-      </item>
-      <item>
-       <ID>S</ID>
-       <KEY>SO_SORDR</KEY>
+       <KEY>SORDER</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
@@ -268,116 +261,109 @@
       <item>
        <ID>I</ID>
        <KEY>001</KEY>
-       <ENTRY>Por documento de origem</ENTRY>
+       <ENTRY>Por documento interempresarial</ENTRY>
        <LENGTH>40</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>002</KEY>
-       <ENTRY>Por documento comercial</ENTRY>
+       <ENTRY>Por lançamento contabilístico</ENTRY>
        <LENGTH>42</LENGTH>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_CCODE</KEY>
+       <KEY>ACCDOC</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_CREDT</KEY>
+       <KEY>ACCDOCST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_DOCCT</KEY>
+       <KEY>BILLDOC</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_DOCST</KEY>
+       <KEY>CCODE</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_EXDOC</KEY>
+       <KEY>CCODEST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_EXTDT</KEY>
+       <KEY>CNT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_GRWER</KEY>
+       <KEY>CREATEAT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_MODDT</KEY>
+       <KEY>DOCREFID</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PINVO</KEY>
+       <KEY>FYEAR</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PINVY</KEY>
+       <KEY>FYEARST</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PUDOC</KEY>
+       <KEY>MODIFAT</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_PUREQ</KEY>
+       <KEY>POSTDATE</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_SINVO</KEY>
+       <KEY>SEASON</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
       </item>
       <item>
        <ID>S</ID>
-       <KEY>SO_SLDTO</KEY>
-       <ENTRY>.</ENTRY>
-       <LENGTH>9</LENGTH>
-       <SPLIT>D</SPLIT>
-      </item>
-      <item>
-       <ID>S</ID>
-       <KEY>SO_SORDR</KEY>
+       <KEY>SORDER</KEY>
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>

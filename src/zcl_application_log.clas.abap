@@ -1,42 +1,44 @@
 "! <p class="shorttext synchronized" lang="es">Application Log</p>
-CLASS zcl_application_log DEFINITION
-  PUBLIC FINAL
-  CREATE PUBLIC.
+class ZCL_APPLICATION_LOG definition
+  public
+  final
+  create public .
 
-  PUBLIC SECTION.
-    TYPES ty_bal_s_msg_tab TYPE STANDARD TABLE OF bal_s_msg.
-    TYPES:
-      BEGIN OF ts_free_message,
+public section.
+
+  types:
+    ty_bal_s_msg_tab TYPE STANDARD TABLE OF bal_s_msg .
+  types:
+    BEGIN OF ts_free_message,
         type      TYPE bapiret2-type,
         message   TYPE bapiret2-message,
         time_stmp TYPE baltimstmp,
         params    TYPE bal_s_parm,
-      END OF ts_free_message.
-    TYPES tt_free_message TYPE STANDARD TABLE OF ts_free_message.
+      END OF ts_free_message .
+  types:
+    tt_free_message TYPE STANDARD TABLE OF ts_free_message .
 
-    DATA control_handle TYPE balcnthndl.
+  data CONTROL_HANDLE type BALCNTHNDL .
     "! <p class="shorttext synchronized" lang="es">Log de aplicación: Programa de control de un log</p>
-    DATA log_handle     TYPE balloghndl VALUE '' ##NO_TEXT.
+  data LOG_HANDLE type BALLOGHNDL value '' ##NO_TEXT.
     "! <p class="shorttext synchronized" lang="es">Log aplicación: Clase de problema de mensaje</p>
-    DATA max_probclass  TYPE balprobcl  VALUE '' ##NO_TEXT.
-
-    CONSTANTS:
-      BEGIN OF bal_onsubscreen,
+  data MAX_PROBCLASS type BALPROBCL value '' ##NO_TEXT.
+  constants:
+    BEGIN OF bal_onsubscreen,
         prog  TYPE sy-repid VALUE 'SAPLSBAL_DISPLAY',
         dynnr TYPE sy-dynnr VALUE '0101',
-      END OF bal_onsubscreen.
+      END OF bal_onsubscreen .
 
-    "! <p class="shorttext synchronized" lang="es">Abre un nuevo registro</p>
-    METHODS open
-      IMPORTING  VALUE(log_object)    TYPE balobj_d
-                 VALUE(log_subobject) TYPE balsubobj  DEFAULT ''
-                 VALUE(extnumber)     TYPE balnrext   DEFAULT ''
-                 VALUE(max_probclass) TYPE balprobcl  DEFAULT '2'
-                 VALUE(default_msgid) TYPE symsgid    DEFAULT ''
-                 VALUE(log_handle)    TYPE balloghndl OPTIONAL
-      EXCEPTIONS logging_error.
-
-    "! <p class="shorttext synchronized" lang="es">Añade un mensaje al registro de la aplicación</p>
+  "! <p class="shorttext synchronized" lang="es">Añade mensaje desde un texto</p>
+  methods ADD_FREETEXT_MESSAGE
+    importing
+      !TYPE type BAPI_MTYPE
+      !TEXT type BAPI_MSG
+      !PARAMS type BAL_S_PARM optional
+      !DETAIL_LEVEL type BALLEVEL default '1'
+    exceptions
+      LOGGING_ERROR .
+    "! <p class="shorttext synchronized" lang="es">Añade un mensaje</p>
     "!
     "! @parameter msgty         | <p class="shorttext synchronized" lang="es">Tipo de mensaje</p>
     "! @parameter msgid         | <p class="shorttext synchronized" lang="es">Clase de mensajes</p>
@@ -47,99 +49,125 @@ CLASS zcl_application_log DEFINITION
     "! @parameter msgv4         | <p class="shorttext synchronized" lang="es">Variable de mensaje</p>
     "! @parameter detail_level  | <p class="shorttext synchronized" lang="es">Log aplicación: Nivel de especificación</p>
     "! @exception logging_error | <p class="shorttext synchronized" lang="es">Logging API returned an error</p>
-    METHODS add_message
-      IMPORTING  msgty        TYPE symsgty  DEFAULT 'I'
-                 msgid        TYPE symsgid  DEFAULT ''
-                 msgno        TYPE symsgno
-                 msgv1        TYPE symsgv   DEFAULT ''
-                 msgv2        TYPE symsgv   DEFAULT ''
-                 msgv3        TYPE symsgv   DEFAULT ''
-                 msgv4        TYPE symsgv   DEFAULT ''
-                 detail_level TYPE ballevel DEFAULT ''
-      EXCEPTIONS logging_error.
-
-    "! <p class="shorttext synchronized" lang="es">Añade mensaje al resgistro desde variable de sistema</p>
-    METHODS add_system_message
-      IMPORTING  iv_detail_level TYPE ballevel DEFAULT '5'
-      EXCEPTIONS logging_error.
-
-    METHODS add_freetext_message
-      IMPORTING  !type        TYPE bapi_mtype
-                 !text        TYPE bapi_msg
-                 params       TYPE bal_s_parm OPTIONAL
-                 detail_level TYPE ballevel   DEFAULT '1'
-      EXCEPTIONS logging_error.
-
+  methods ADD_MESSAGE
+    importing
+      !MSGTY type SYMSGTY default 'I'
+      !MSGID type SYMSGID default ''
+      !MSGNO type SYMSGNO
+      !MSGV1 type SYMSGV default ''
+      !MSGV2 type SYMSGV default ''
+      !MSGV3 type SYMSGV default ''
+      !MSGV4 type SYMSGV default ''
+      !DETAIL_LEVEL type BALLEVEL default ''
+    exceptions
+      LOGGING_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Añade mensaje desde estructura BAPIRET2</p>
+  methods ADD_MESSAGE_BAPIRET2_TABLE
+    importing
+      !MESSAGES type BAPIRETTAB
+    exceptions
+      LOGGING_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Añade mensaje desde estructura BAPIRETURN</p>
+  methods ADD_MESSAGE_BAPIRETURN_TABLE
+    importing
+      !MESSAGES type EWA_BAPIRETURN_TAB
+    exceptions
+      LOGGING_ERROR .
     "! <p class="shorttext synchronized" lang="es">Añade un mensaje BAL_S_MSG al registro de la aplicación</p>
-    METHODS add_message_struct
-      IMPORTING  log_message TYPE bal_s_msg
-      EXCEPTIONS logging_error.
-
-    "! <p class="shorttext synchronized" lang="es">Añade mensajes al registro desde una tabla</p>
-    METHODS add_message_table
-      IMPORTING  message_table TYPE ty_bal_s_msg_tab
-      EXCEPTIONS logging_error.
-
-    METHODS add_message_bapireturn_table
-      IMPORTING  !messages TYPE ewa_bapireturn_tab
-      EXCEPTIONS logging_error.
-
-    METHODS add_message_bapiret2_table
-      IMPORTING  !messages TYPE bapirettab
-      EXCEPTIONS logging_error.
-
-    "! <p class="shorttext synchronized" lang="es">Muestra el registro guardado</p>
-    METHODS display
-      EXCEPTIONS display_error.
-
-    "! <p class="shorttext synchronized" lang="es">Muestra el registro guardado (Modo por Detalle-Nivel)</p>
-    METHODS display_detlevel
-      IMPORTING  modal TYPE abap_bool DEFAULT abap_false
-      EXCEPTIONS display_error.
-
-    METHODS control_refresh
-      EXCEPTIONS display_error.
-
-    METHODS display_oncontrol
-      IMPORTING dsp_profile TYPE bal_s_prof
-                container   TYPE REF TO cl_gui_container
-      RAISING   cx_salv_msg.
-
-    METHODS set_modal_to_profile
-      IMPORTING coordinates            TYPE zst99_screen_coordinates
-                VALUE(dsp_profile_in)  TYPE bal_s_prof
-      RETURNING VALUE(dsp_profile_out) TYPE bal_s_prof.
-
-    METHODS set_profile_detlevel
-      IMPORTING tree_ontop         TYPE baltrontop               DEFAULT abap_true
-                modal_coordinates  TYPE zst99_screen_coordinates OPTIONAL
-                disvariant         TYPE disvariant
-      RETURNING VALUE(dsp_profile) TYPE bal_s_prof.
-
-    METHODS set_profile_single_log
-      RETURNING VALUE(dsp_profile) TYPE bal_s_prof.
-
-    METHODS output_init
-      IMPORTING dsp_profile TYPE bal_s_prof.
-
-    METHODS output_set_data
-      EXCEPTIONS display_error.
-
-    METHODS output_clear_and_refresh.
-
-    METHODS output_free
-      EXCEPTIONS display_error.
-
-    METHODS delete_all_messages
-      EXCEPTIONS logging_error.
-
+  methods ADD_MESSAGE_STRUCT
+    importing
+      !LOG_MESSAGE type BAL_S_MSG
+    exceptions
+      LOGGING_ERROR .
+    "! <p class="shorttext synchronized" lang="es">Añade mensajes desde una tabla</p>
+  methods ADD_MESSAGE_TABLE
+    importing
+      !MESSAGE_TABLE type TY_BAL_S_MSG_TAB
+    exceptions
+      LOGGING_ERROR .
+    "! <p class="shorttext synchronized" lang="es">Añade mensaje desde variable de sistema</p>
+  methods ADD_SYSTEM_MESSAGE
+    importing
+      !IV_DETAIL_LEVEL type BALLEVEL default '5'
+    exceptions
+      LOGGING_ERROR .
     "! <p class="shorttext synchronized" lang="es">Escribe el registro de la aplicación en la base de datos</p>
     "!
     "! @parameter log_number | <p class="shorttext synchronized" lang="es">Log de aplicación: Número de log</p>
-    METHODS close
-      EXPORTING  log_number TYPE balognr
-      EXCEPTIONS logging_error.
-
+  methods CLOSE
+    exporting
+      !LOG_NUMBER type BALOGNR
+    exceptions
+      LOGGING_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Actualizar/Refrescar control-container</p>
+  methods CONTROL_REFRESH
+    exceptions
+      DISPLAY_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Borrar mensajes</p>
+  methods DELETE_ALL_MESSAGES
+    exceptions
+      LOGGING_ERROR .
+    "! <p class="shorttext synchronized" lang="es">Mostrar mensajes</p>
+  methods DISPLAY
+    exceptions
+      DISPLAY_ERROR .
+    "! <p class="shorttext synchronized" lang="es">Mostrar mensajes (Modo por Detalle-Nivel) [Obsoleto]</p>
+  methods DISPLAY_DETLEVEL
+    importing
+      !MODAL type ABAP_BOOL default ABAP_FALSE
+    exceptions
+      DISPLAY_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Mostrar mensajes en OnControl</p>
+  methods DISPLAY_ONCONTROL
+    importing
+      !DSP_PROFILE type BAL_S_PROF
+      !CONTAINER type ref to CL_GUI_CONTAINER
+    raising
+      CX_SALV_MSG .
+    "! <p class="shorttext synchronized" lang="es">Abre un nuevo registro</p>
+  methods OPEN
+    importing
+      value(LOG_OBJECT) type BALOBJ_D
+      value(LOG_SUBOBJECT) type BALSUBOBJ default ''
+      value(EXTNUMBER) type BALNREXT default ''
+      value(MAX_PROBCLASS) type BALPROBCL default '2'
+      value(DEFAULT_MSGID) type SYMSGID default ''
+      value(LOG_HANDLE) type BALLOGHNDL optional
+    exceptions
+      LOGGING_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Salida de subpantalla: Borrar y Actualizar</p>
+  methods OUTPUT_CLEAR_AND_REFRESH .
+  "! <p class="shorttext synchronized" lang="es">Salida de subpantalla : Fin</p>
+  methods OUTPUT_FREE
+    exceptions
+      DISPLAY_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Salida de subpantalla: Inicialización</p>
+  methods OUTPUT_INIT
+    importing
+      !DSP_PROFILE type BAL_S_PROF .
+  "! <p class="shorttext synchronized" lang="es">Salida de subpantalla: Establecer datos de salida</p>
+  methods OUTPUT_SET_DATA
+    exceptions
+      DISPLAY_ERROR .
+  "! <p class="shorttext synchronized" lang="es">Activa modo popup</p>
+  methods SET_MODAL_TO_PROFILE
+    importing
+      !COORDINATES type ZST99_SCREEN_COORDINATES
+      value(DSP_PROFILE_IN) type BAL_S_PROF
+    returning
+      value(DSP_PROFILE_OUT) type BAL_S_PROF .
+  "! <p class="shorttext synchronized" lang="es">Establecer el perfil nivel detalles</p>
+  methods SET_PROFILE_DETLEVEL
+    importing
+      !TREE_ONTOP type BALTRONTOP default ABAP_TRUE
+      !MODAL_COORDINATES type ZST99_SCREEN_COORDINATES optional
+      !DISVARIANT type DISVARIANT
+    returning
+      value(DSP_PROFILE) type BAL_S_PROF .
+  "! <p class="shorttext synchronized" lang="es">Establecer el perfil simple</p>
+  methods SET_PROFILE_SINGLE_LOG
+    returning
+      value(DSP_PROFILE) type BAL_S_PROF .
   PROTECTED SECTION.
     "! <p class="shorttext synchronized" lang="es">Clase de mensajes</p>
     DATA default_msgid         TYPE symsgid    VALUE '' ##NO_TEXT.
@@ -153,16 +181,23 @@ CLASS zcl_application_log DEFINITION
     DATA log_subobject         TYPE balsubobj  VALUE '' ##NO_TEXT.
     DATA log_subsc_open_flag   TYPE c LENGTH 1.
 
-  PRIVATE SECTION.
+private section.
+
     "! <p class="shorttext synchronized" lang="es">Deriva la clase de problema del tipo de mensaje</p>
-    METHODS get_probclass
-      IMPORTING  VALUE(message_type)  TYPE symsgty
-      RETURNING  VALUE(problem_class) TYPE balprobcl
-      EXCEPTIONS logging_error.
+  methods GET_PROBCLASS
+    importing
+      value(MESSAGE_TYPE) type SYMSGTY
+    returning
+      value(PROBLEM_CLASS) type BALPROBCL
+    exceptions
+      LOGGING_ERROR .
 ENDCLASS.
 
 
-CLASS zcl_application_log IMPLEMENTATION.
+
+CLASS ZCL_APPLICATION_LOG IMPLEMENTATION.
+
+
   METHOD add_message.
     DATA msg TYPE bal_s_msg.
 
@@ -184,6 +219,7 @@ CLASS zcl_application_log IMPLEMENTATION.
               RAISING logging_error.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD add_message_struct.
     DATA message TYPE bal_s_msg.
@@ -237,6 +273,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD add_message_table.
     DATA message TYPE bal_s_msg.
 
@@ -251,6 +288,7 @@ CLASS zcl_application_log IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD add_system_message.
     DATA ls_message TYPE bal_s_msg.
@@ -275,6 +313,7 @@ CLASS zcl_application_log IMPLEMENTATION.
               RAISING logging_error.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD close.
     DATA handle_table     TYPE bal_t_logh.
@@ -329,6 +368,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD display.
     DATA display_profile TYPE bal_s_prof.
     DATA t_log_handle    TYPE bal_t_logh.
@@ -370,6 +410,7 @@ CLASS zcl_application_log IMPLEMENTATION.
               RAISING display_error.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD display_detlevel.
     DATA display_profile TYPE bal_s_prof.
@@ -413,6 +454,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD get_probclass.
     " determine log level from message type
     CASE message_type.
@@ -428,6 +470,7 @@ CLASS zcl_application_log IMPLEMENTATION.
         MESSAGE e000 WITH message_type RAISING logging_error.
     ENDCASE.
   ENDMETHOD.
+
 
   METHOD open.
     DATA log_header    TYPE bal_s_log.
@@ -503,6 +546,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD add_freetext_message.
     DATA(probclass) = get_probclass( message_type = type ).
 
@@ -524,6 +568,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD add_message_bapireturn_table.
     DATA(converted_messages) =
         VALUE bapirettab( FOR msg IN messages
@@ -533,6 +578,7 @@ CLASS zcl_application_log IMPLEMENTATION.
 
     add_message_bapiret2_table( converted_messages ).
   ENDMETHOD.
+
 
   METHOD add_message_bapiret2_table.
     DATA bal_msg TYPE bal_s_msg.
@@ -572,6 +618,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD control_refresh.
     DATA(loghndls) = VALUE bal_t_logh( ( log_handle ) ).
 
@@ -585,6 +632,7 @@ CLASS zcl_application_log IMPLEMENTATION.
               RAISING display_error.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD display_oncontrol.
     DATA(loghndls) = VALUE bal_t_logh( ( log_handle ) ).
@@ -619,6 +667,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     log_control_open_flag = abap_true.
   ENDMETHOD.
 
+
   METHOD delete_all_messages.
     CALL FUNCTION 'BAL_LOG_MSG_DELETE_ALL'
       EXPORTING  i_log_handle = log_handle
@@ -630,10 +679,12 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD output_clear_and_refresh.
     delete_all_messages( ).
     output_set_data( ).
   ENDMETHOD.
+
 
   METHOD output_free.
     CALL FUNCTION 'BAL_DSP_OUTPUT_FREE'
@@ -645,6 +696,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD output_init.
     IF log_subsc_open_flag IS NOT INITIAL.
       RETURN.
@@ -655,6 +707,7 @@ CLASS zcl_application_log IMPLEMENTATION.
 
     log_subsc_open_flag = abap_true.
   ENDMETHOD.
+
 
   METHOD output_set_data.
     DATA(loghndls) = VALUE bal_t_logh( ( me->log_handle ) ).
@@ -671,6 +724,7 @@ CLASS zcl_application_log IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD set_modal_to_profile.
     dsp_profile_out = VALUE #( BASE dsp_profile_in
                                start_col = coordinates-starting_x
@@ -679,6 +733,7 @@ CLASS zcl_application_log IMPLEMENTATION.
                                end_row   = coordinates-ending_y
                                pop_adjst = abap_true ).
   ENDMETHOD.
+
 
   METHOD set_profile_detlevel.
     " TODO: parameter MODAL_COORDINATES is never used (ABAP cleaner)
@@ -693,6 +748,7 @@ CLASS zcl_application_log IMPLEMENTATION.
                            exp_level  = 9
                            cwidth_opt = abap_true ).
   ENDMETHOD.
+
 
   METHOD set_profile_single_log.
     CALL FUNCTION 'BAL_DSP_PROFILE_SINGLE_LOG_GET'

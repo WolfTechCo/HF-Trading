@@ -318,6 +318,20 @@
      <LENG>000010</LENG>
     </DD36M>
    </DD36M>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+    <LANGU>P</LANGU>
+   </I18N_LANGS>
+   <DD02_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Trading Invoices - Reclassification</DDTEXT>
+    </item>
+    <item>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DDTEXT>Facturas comerciais - Reclassificação</DDTEXT>
+    </item>
+   </DD02_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

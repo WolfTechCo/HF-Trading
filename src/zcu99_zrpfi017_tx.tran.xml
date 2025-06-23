@@ -24,7 +24,7 @@
    <I18N_TPOOL>
     <TSTCT>
      <SPRSL>E</SPRSL>
-     <TTEXT>Trading process configuration(EXT)</TTEXT>
+     <TTEXT>Trading process configuration(RECL)</TTEXT>
     </TSTCT>
     <TSTCT>
      <SPRSL>F</SPRSL>
@@ -32,7 +32,7 @@
     </TSTCT>
     <TSTCT>
      <SPRSL>P</SPRSL>
-     <TTEXT>Configuração do processo trad(EXT)</TTEXT>
+     <TTEXT>Configuração do processo trad(RECL)</TTEXT>
     </TSTCT>
    </I18N_TPOOL>
   </asx:values>

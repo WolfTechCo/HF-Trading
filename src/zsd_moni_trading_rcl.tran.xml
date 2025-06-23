@@ -22,7 +22,7 @@
    <I18N_TPOOL>
     <TSTCT>
      <SPRSL>E</SPRSL>
-     <TTEXT>Monitor trading - External Producers</TTEXT>
+     <TTEXT>Monitor trading - Reclasification</TTEXT>
     </TSTCT>
     <TSTCT>
      <SPRSL>F</SPRSL>
@@ -30,7 +30,7 @@
     </TSTCT>
     <TSTCT>
      <SPRSL>P</SPRSL>
-     <TTEXT>Monitorar a trading - Produtores Ext</TTEXT>
+     <TTEXT>Monitorar a trading - Reclassificaçã</TTEXT>
     </TSTCT>
    </I18N_TPOOL>
   </asx:values>
