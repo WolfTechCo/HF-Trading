@@ -464,6 +464,48 @@
      <MSGNR>075</MSGNR>
      <TEXT>Sociedad/Referencia/Fch.Contable &amp;1 &amp;2 &amp;3</TEXT>
     </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>076</MSGNR>
+     <TEXT>Documento de facturación &amp;1 no existe o esta anulado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>077</MSGNR>
+     <TEXT>Documento &amp;1 &amp;2 &amp;3  ya fue anulado por &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>078</MSGNR>
+     <TEXT>SM ya contabilizada con número documento &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>079</MSGNR>
+     <TEXT>No se ha encontrado la configuración de las cuentas contables</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Documento Facturación &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>No existen registros en log´s</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>S</SPRSL>
+     <ARBGB>ZMC_TRADING_SRV</ARBGB>
+     <MSGNR>082</MSGNR>
+     <TEXT>Documento ya tratado</TEXT>
+    </T100>
    </T100>
    <I18N_LANGS>
     <LANGU>E</LANGU>
@@ -867,6 +909,41 @@
      <SPRSL>E</SPRSL>
      <MSGNR>075</MSGNR>
      <TEXT>Company code/Reference/Accounting &amp;1 &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>076</MSGNR>
+     <TEXT>Billing document &amp;1 does not exist or is cancelled.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>077</MSGNR>
+     <TEXT>Document &amp;1 &amp;2 &amp;3 already cancelled by &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>078</MSGNR>
+     <TEXT>GI already posted with document number &amp;1 &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>079</MSGNR>
+     <TEXT>The configuration of the accounting accounts has not been found.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>080</MSGNR>
+     <TEXT>Invoicing Document &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>081</MSGNR>
+     <TEXT>There are no log records</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>082</MSGNR>
+     <TEXT>Document already processed</TEXT>
     </item>
     <item>
      <SPRSL>F</SPRSL>
@@ -1567,6 +1644,41 @@
      <SPRSL>P</SPRSL>
      <MSGNR>075</MSGNR>
      <TEXT>Empresa/Referência/Contabilidade &amp;1 &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>076</MSGNR>
+     <TEXT>O documento de faturação &amp;1 não existe ou foi anulado.</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>077</MSGNR>
+     <TEXT>Documento &amp;1 &amp;2 &amp;3 já anulado por &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>078</MSGNR>
+     <TEXT>IG já lançada com o número de documento &amp;1 &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>079</MSGNR>
+     <TEXT>A configuração das contas contabilísticas não foi encontrada.</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>080</MSGNR>
+     <TEXT>Faturação de documentos &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>081</MSGNR>
+     <TEXT>Não existem registos de log</TEXT>
+    </item>
+    <item>
+     <SPRSL>P</SPRSL>
+     <MSGNR>082</MSGNR>
+     <TEXT>Documento já discutido</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>
