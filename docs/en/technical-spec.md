@@ -1,4 +1,4 @@
-[← Back to README](../../README.md) | [Español](../es/technical-spec.md)
+[← Back to README](../../README.en.md) | [Español](../es/technical-spec.md)
 
 # Technical Specification — HF-Trading
 
