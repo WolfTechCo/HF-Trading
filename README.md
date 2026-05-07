@@ -100,8 +100,18 @@ Este desarrollo gestiona:
 
 ## Documentacion
 
+### Espanol
+
 | Documento | Descripcion |
 |---|---|
 | [Especificacion Tecnica](docs/technical-spec.md) | Objetos ABAP, parametros y logica |
 | [Especificacion Funcional](docs/functional-spec.md) | Proceso de negocio y reglas |
 | [Changelog](docs/changelog.md) | Historial de versiones |
+
+### English
+
+| Document | Description |
+|---|---|
+| [Technical Specification](docs/en/technical-spec.md) | ABAP objects, parameters and logic |
+| [Functional Specification](docs/en/functional-spec.md) | Business process and rules |
+| [Changelog](docs/en/changelog.md) | Version history |
