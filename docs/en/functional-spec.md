@@ -1,4 +1,4 @@
-[← Back to README](../../README.md) | [Español](../functional-spec.md)
+[← Back to README](../../README.md) | [Español](../es/functional-spec.md)
 
 # Functional Specification — HF-Trading
 
